@@ -17,7 +17,7 @@
 ---
 
 ## Icon
-![Project Icon](Proyecto\Assets\icon.png)
+![Project Icon](Proyecto/Assets/icon.png)
 
 ---
 
