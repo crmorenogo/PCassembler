@@ -1,6 +1,7 @@
 
-# Group 5 - Repository  
-**Software Engineering 1 - 2024-2**
+# Group 5 - Repository  Software Engineering 1 - 2024-2
+
+---
 
 ## Members
 - Cristian Felipe Moreno Gómez
