@@ -1,0 +1,26 @@
+# Ignorar la carpeta node_modules
+node_modules/
+
+# Ignorar los archivos de log
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Ignorar los archivos de entorno
+.env
+
+# Ignorar las carpetas de construcción
+dist/
+build/
+
+# Ignorar la carpeta .next (para proyectos Next.js)
+
+
+# Ignorar archivos de configuración de IDEs
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
