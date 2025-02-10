@@ -1,0 +1,3208 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>ESLint Report</title>
+        <link rel="icon" type="image/png" sizes="any" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAHaAAAB2gGFomX7AAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAABD1JREFUWMPFl11sk2UUx3/nbYtjxS1MF7MLMTECMgSTtSSyrQkLhAj7UBPnDSEGoxegGzMwojhXVpmTAA5iYpSoMQa8GBhFOrMFk03buei6yRAlcmOM0SEmU9d90b19jxcM1o5+sGnsc/e+z/l6ztf/HFFVMnns6QieeOCHBePGsHM+wrOtvLG2C4WRVDSSygNV7sCjlspxwDnPB44aols/DXk+mbMBmx/6OseITF1CuOtfevkPh2Uu+/jbdX8lujSScRlT5r7/QDlAfsRmfzmpnkQ/H3H13gf6bBrBn1uqK8WylgEnU8eZmk1repbfchJG1TyKyIKEwuBHFd3lD3naY3O1siiwXsVoBV2VgM1ht/QQUJk2ByqKghsQziYQ8ifKgexIXmuyzC4r67Y7R+xPAfuB/Nn3Cpva+0s7khpQVtZtd4bt51BWxtBYAiciprG7c7D4SixzU9PYalDL6110Ifb/w8W9eY7JqFeFHbO8fPGyLHwwFHJNJTSgwtVTB9oaw9BlQ+tO93vOxypoaQnfEYlI43SeCHDC4TDq9+51/h5fxr33q0ZfV9g04wat9Q943rjJgCp3952W2i8Bi6eDvdsfKj0cK/DYMRyXL4/sUJUmIHd2zYMezsvLaamp4WpcWN3BXSiHpuMwbGbZlnZ8tXY4rgosy+G7oRwQ0cAsd28YGgqfU5UjCZQDLALxDg+Hv/P5Rqvj4hwrS8izXzWb4spwc1GgENFnkpWRzxeuB+ssUHgLdb9UVdt8vpGdKQpze7n7y1U3DBChNRUuqOo9c+0+qpKKxyZqtAIYla7gY4JszAAQri93BSsMRZoyBcUC+w3Q3AyOA4sNhAOZ0q7Iq0b2vUNvK5zPgP+/H8+Zetdoa6uOikhdGurxebwvJY8Iz3V1rTMNAH+opEuQj5KTT/qA1yC+wyUjBm12OidaUtCcPNNX2h0Hx2JG69VulANZAJZJwfU7rzd/FHixuXniTdM0m4GtSQT7bTartqEh9yfImUEzkwKZmTwmo5a5JwkYBfcDL01/RkR5y8iWhtPBknB8ZxwtU9UjwOrrKCeizzc25nTGg1F/turEHoU9wMLpDvWKf8DTmNCAKnd/tqUTF4ElMXJ+A5rWDJS+41WsGWzALhJ+ErBWrLj9g+pqojHxlXJX8HGUg0BsR/x1yhxf3jm4cSzpQFLp6tmi6PEE7g1ZhtZ91ufpSZUAFa6gC+UoQslNaSmypT1U8mHKiUgEKS8KfgF4EpYunFI16tsHin+OG0LcgQK7yj7g6cSzpva2D3hKVNG0Y3mVO1BkqfSlmJrHBQ4uvM12gJHc6ETW8HZVfMRmXvyxxNC1Z/o839zyXlDuCr4nsC11J+MXueaVJWn6yPv+/pJtc9oLTNN4AeTvNGByd3rlhE2x9s5pLwDoHCy+grDzWmOZ95lUtLYj5Bma126Y8eX0/zj/ADxGyViSg4BXAAAAAElFTkSuQmCC">
+        <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjk0LjgyNSAyNTguOTgyJyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnPg0KPHBhdGggZmlsbD0nIzgwODBGMicgZD0nTTk3LjAyMSw5OS4wMTZsNDguNDMyLTI3Ljk2MmMxLjIxMi0wLjcsMi43MDYtMC43LDMuOTE4LDBsNDguNDMzLDI3Ljk2MiBjMS4yMTEsMC43LDEuOTU5LDEuOTkzLDEuOTU5LDMuMzkzdjU1LjkyNGMwLDEuMzk5LTAuNzQ4LDIuNjkzLTEuOTU5LDMuMzk0bC00OC40MzMsMjcuOTYyYy0xLjIxMiwwLjctMi43MDYsMC43LTMuOTE4LDAgbC00OC40MzItMjcuOTYyYy0xLjIxMi0wLjctMS45NTktMS45OTQtMS45NTktMy4zOTR2LTU1LjkyNEM5NS4wNjMsMTAxLjAwOSw5NS44MSw5OS43MTYsOTcuMDIxLDk5LjAxNicvPg0KPHBhdGggZmlsbD0nIzRCMzJDMycgZD0nTTI3My4zMzYsMTI0LjQ4OEwyMTUuNDY5LDIzLjgxNmMtMi4xMDItMy42NC01Ljk4NS02LjMyNS0xMC4xODgtNi4zMjVIODkuNTQ1IGMtNC4yMDQsMC04LjA4OCwyLjY4NS0xMC4xOSw2LjMyNWwtNTcuODY3LDEwMC40NWMtMi4xMDIsMy42NDEtMi4xMDIsOC4yMzYsMCwxMS44NzdsNTcuODY3LDk5Ljg0NyBjMi4xMDIsMy42NCw1Ljk4Niw1LjUwMSwxMC4xOSw1LjUwMWgxMTUuNzM1YzQuMjAzLDAsOC4wODctMS44MDUsMTAuMTg4LTUuNDQ2bDU3Ljg2Ny0xMDAuMDEgQzI3NS40MzksMTMyLjM5NiwyNzUuNDM5LDEyOC4xMjgsMjczLjMzNiwxMjQuNDg4IE0yMjUuNDE5LDE3Mi44OThjMCwxLjQ4LTAuODkxLDIuODQ5LTIuMTc0LDMuNTlsLTczLjcxLDQyLjUyNyBjLTEuMjgyLDAuNzQtMi44ODgsMC43NC00LjE3LDBsLTczLjc2Ny00Mi41MjdjLTEuMjgyLTAuNzQxLTIuMTc5LTIuMTA5LTIuMTc5LTMuNTlWODcuODQzYzAtMS40ODEsMC44ODQtMi44NDksMi4xNjctMy41OSBsNzMuNzA3LTQyLjUyN2MxLjI4Mi0wLjc0MSwyLjg4Ni0wLjc0MSw0LjE2OCwwbDczLjc3Miw0Mi41MjdjMS4yODMsMC43NDEsMi4xODYsMi4xMDksMi4xODYsMy41OVYxNzIuODk4eicvPg0KPC9zdmc+">
+        <style>
+            body {
+                font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+                font-size: 16px;
+                font-weight: normal;
+                margin: 0;
+                padding: 0;
+                color: #333;
+            }
+
+            #overview {
+                padding: 20px 30px;
+            }
+
+            td,
+            th {
+                padding: 5px 10px;
+            }
+
+            h1 {
+                margin: 0;
+            }
+
+            table {
+                margin: 30px;
+                width: calc(100% - 60px);
+                max-width: 1000px;
+                border-radius: 5px;
+                border: 1px solid #ddd;
+                border-spacing: 0;
+            }
+
+            th {
+                font-weight: 400;
+                font-size: medium;
+                text-align: left;
+                cursor: pointer;
+            }
+
+            td.clr-1,
+            td.clr-2,
+            th span {
+                font-weight: 700;
+            }
+
+            th span {
+                float: right;
+                margin-left: 20px;
+            }
+
+            th span::after {
+                content: "";
+                clear: both;
+                display: block;
+            }
+
+            tr:last-child td {
+                border-bottom: none;
+            }
+
+            tr td:first-child,
+            tr td:last-child {
+                color: #9da0a4;
+            }
+
+            #overview.bg-0,
+            tr.bg-0 th {
+                color: #468847;
+                background: #dff0d8;
+                border-bottom: 1px solid #d6e9c6;
+            }
+
+            #overview.bg-1,
+            tr.bg-1 th {
+                color: #f0ad4e;
+                background: #fcf8e3;
+                border-bottom: 1px solid #fbeed5;
+            }
+
+            #overview.bg-2,
+            tr.bg-2 th {
+                color: #b94a48;
+                background: #f2dede;
+                border-bottom: 1px solid #eed3d7;
+            }
+
+            td {
+                border-bottom: 1px solid #ddd;
+            }
+
+            td.clr-1 {
+                color: #f0ad4e;
+            }
+
+            td.clr-2 {
+                color: #b94a48;
+            }
+
+            td a {
+                color: #3a33d1;
+                text-decoration: none;
+            }
+
+            td a:hover {
+                color: #272296;
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="overview" class="bg-2">
+            <h1>ESLint Report</h1>
+            <div>
+                <span>270 problems (105 errors, 165 warnings)</span> - Generated on Sun Feb 09 2025 19:41:34 GMT-0500 (Colombia Standard Time)
+            </div>
+        </div>
+        <table>
+            <tbody>
+                <tr class="bg-0" data-group="f-0">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\build\chunks\[root of the server]__05f88b._.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-2" data-group="f-1">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\build\chunks\[root of the server]__fd836e._.js
+        <span>1 problem (1 error, 0 warnings)</span>
+    </th>
+</tr>
+<tr style="display: none;" class="f-1">
+    <td>415:9</td>
+    <td class="clr-2">Error</td>
+    <td>Do not assign to the variable `module`. See: https://nextjs.org/docs/messages/no-assign-module-variable</td>
+    <td>
+        <a href="https://nextjs.org/docs/messages/no-assign-module-variable" target="_blank" rel="noopener noreferrer">@next/next/no-assign-module-variable</a>
+    </td>
+</tr>
+
+<tr class="bg-2" data-group="f-2">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\build\chunks\[turbopack]_runtime.js
+        <span>8 problems (7 errors, 1 warning)</span>
+    </th>
+</tr>
+<tr style="display: none;" class="f-2">
+    <td>9:5</td>
+    <td class="clr-2">Error</td>
+    <td>Definition for rule &#39;@typescript-eslint/no-unused-vars&#39; was not found.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">@typescript-eslint/no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-2">
+    <td>132:5</td>
+    <td class="clr-2">Error</td>
+    <td>Do not assign to the variable `module`. See: https://nextjs.org/docs/messages/no-assign-module-variable</td>
+    <td>
+        <a href="https://nextjs.org/docs/messages/no-assign-module-variable" target="_blank" rel="noopener noreferrer">@next/next/no-assign-module-variable</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-2">
+    <td>147:5</td>
+    <td class="clr-2">Error</td>
+    <td>Do not assign to the variable `module`. See: https://nextjs.org/docs/messages/no-assign-module-variable</td>
+    <td>
+        <a href="https://nextjs.org/docs/messages/no-assign-module-variable" target="_blank" rel="noopener noreferrer">@next/next/no-assign-module-variable</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-2">
+    <td>339:1</td>
+    <td class="clr-2">Error</td>
+    <td>Definition for rule &#39;@typescript-eslint/no-unused-vars&#39; was not found.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">@typescript-eslint/no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-2">
+    <td>378:1</td>
+    <td class="clr-2">Error</td>
+    <td>Definition for rule &#39;@typescript-eslint/no-unused-vars&#39; was not found.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">@typescript-eslint/no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-2">
+    <td>398:1</td>
+    <td class="clr-2">Error</td>
+    <td>Definition for rule &#39;@typescript-eslint/no-unused-vars&#39; was not found.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">@typescript-eslint/no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-2">
+    <td>419:1</td>
+    <td class="clr-2">Error</td>
+    <td>Definition for rule &#39;@typescript-eslint/no-unused-vars&#39; was not found.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">@typescript-eslint/no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-2">
+    <td>514:9</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-eval&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr class="bg-1" data-group="f-3">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\build\chunks\node_modules_b5d1de._.js
+        <span>6 problems (0 errors, 6 warnings)</span>
+    </th>
+</tr>
+<tr style="display: none;" class="f-3">
+    <td>5995:1</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-console&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-3">
+    <td>6201:25</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-console&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-3">
+    <td>6207:36</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-console&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-3">
+    <td>6700:9</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-console&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-3">
+    <td>6703:13</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-console&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-3">
+    <td>6706:40</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-console&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr class="bg-0" data-group="f-4">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\build\chunks\postcss_config_mjs_transform_ts_89c7e7._.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-5">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\server\app\favicon.ico\route.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-6">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\server\app\page.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-7">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\server\app\page_client-reference-manifest.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-8">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\server\chunks\[root of the server]__427628._.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-2" data-group="f-9">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\server\chunks\[turbopack]_runtime.js
+        <span>8 problems (7 errors, 1 warning)</span>
+    </th>
+</tr>
+<tr style="display: none;" class="f-9">
+    <td>9:5</td>
+    <td class="clr-2">Error</td>
+    <td>Definition for rule &#39;@typescript-eslint/no-unused-vars&#39; was not found.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">@typescript-eslint/no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-9">
+    <td>132:5</td>
+    <td class="clr-2">Error</td>
+    <td>Do not assign to the variable `module`. See: https://nextjs.org/docs/messages/no-assign-module-variable</td>
+    <td>
+        <a href="https://nextjs.org/docs/messages/no-assign-module-variable" target="_blank" rel="noopener noreferrer">@next/next/no-assign-module-variable</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-9">
+    <td>147:5</td>
+    <td class="clr-2">Error</td>
+    <td>Do not assign to the variable `module`. See: https://nextjs.org/docs/messages/no-assign-module-variable</td>
+    <td>
+        <a href="https://nextjs.org/docs/messages/no-assign-module-variable" target="_blank" rel="noopener noreferrer">@next/next/no-assign-module-variable</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-9">
+    <td>339:1</td>
+    <td class="clr-2">Error</td>
+    <td>Definition for rule &#39;@typescript-eslint/no-unused-vars&#39; was not found.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">@typescript-eslint/no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-9">
+    <td>378:1</td>
+    <td class="clr-2">Error</td>
+    <td>Definition for rule &#39;@typescript-eslint/no-unused-vars&#39; was not found.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">@typescript-eslint/no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-9">
+    <td>398:1</td>
+    <td class="clr-2">Error</td>
+    <td>Definition for rule &#39;@typescript-eslint/no-unused-vars&#39; was not found.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">@typescript-eslint/no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-9">
+    <td>419:1</td>
+    <td class="clr-2">Error</td>
+    <td>Definition for rule &#39;@typescript-eslint/no-unused-vars&#39; was not found.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">@typescript-eslint/no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-9">
+    <td>514:9</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-eval&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr class="bg-1" data-group="f-10">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\server\chunks\node_modules_next_425054._.js
+        <span>5 problems (0 errors, 5 warnings)</span>
+    </th>
+</tr>
+<tr style="display: none;" class="f-10">
+    <td>61:1</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-shadow&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-10">
+    <td>3593:1</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-redeclare&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-10">
+    <td>5772:81</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;eqeqeq&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-10">
+    <td>5775:55</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;eqeqeq&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-10">
+    <td>5777:33</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;eqeqeq&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr class="bg-0" data-group="f-11">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\server\chunks\ssr\[root of the server]__0702e5._.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-12">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\server\chunks\ssr\[root of the server]__109751._.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-13">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\server\chunks\ssr\[root of the server]__208381._.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-14">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\server\chunks\ssr\[root of the server]__4a14b3._.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-15">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\server\chunks\ssr\[root of the server]__592060._.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-16">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\server\chunks\ssr\[root of the server]__5f50db._.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-1" data-group="f-17">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\server\chunks\ssr\[root of the server]__65dd84._.js
+        <span>4 problems (0 errors, 4 warnings)</span>
+    </th>
+</tr>
+<tr style="display: none;" class="f-17">
+    <td>326:9</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;default-case&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-17">
+    <td>789:17</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-control-regex&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-17">
+    <td>793:17</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-control-regex&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-17">
+    <td>2971:13</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-self-assign&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr class="bg-0" data-group="f-18">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\server\chunks\ssr\[root of the server]__688d87._.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-19">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\server\chunks\ssr\[root of the server]__86e789._.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-20">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\server\chunks\ssr\[root of the server]__cb64d4._.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-21">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\server\chunks\ssr\[root of the server]__e237d7._.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-2" data-group="f-22">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\server\chunks\ssr\[turbopack]_runtime.js
+        <span>8 problems (7 errors, 1 warning)</span>
+    </th>
+</tr>
+<tr style="display: none;" class="f-22">
+    <td>9:5</td>
+    <td class="clr-2">Error</td>
+    <td>Definition for rule &#39;@typescript-eslint/no-unused-vars&#39; was not found.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">@typescript-eslint/no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-22">
+    <td>132:5</td>
+    <td class="clr-2">Error</td>
+    <td>Do not assign to the variable `module`. See: https://nextjs.org/docs/messages/no-assign-module-variable</td>
+    <td>
+        <a href="https://nextjs.org/docs/messages/no-assign-module-variable" target="_blank" rel="noopener noreferrer">@next/next/no-assign-module-variable</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-22">
+    <td>147:5</td>
+    <td class="clr-2">Error</td>
+    <td>Do not assign to the variable `module`. See: https://nextjs.org/docs/messages/no-assign-module-variable</td>
+    <td>
+        <a href="https://nextjs.org/docs/messages/no-assign-module-variable" target="_blank" rel="noopener noreferrer">@next/next/no-assign-module-variable</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-22">
+    <td>339:1</td>
+    <td class="clr-2">Error</td>
+    <td>Definition for rule &#39;@typescript-eslint/no-unused-vars&#39; was not found.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">@typescript-eslint/no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-22">
+    <td>378:1</td>
+    <td class="clr-2">Error</td>
+    <td>Definition for rule &#39;@typescript-eslint/no-unused-vars&#39; was not found.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">@typescript-eslint/no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-22">
+    <td>398:1</td>
+    <td class="clr-2">Error</td>
+    <td>Definition for rule &#39;@typescript-eslint/no-unused-vars&#39; was not found.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">@typescript-eslint/no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-22">
+    <td>419:1</td>
+    <td class="clr-2">Error</td>
+    <td>Definition for rule &#39;@typescript-eslint/no-unused-vars&#39; was not found.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">@typescript-eslint/no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-22">
+    <td>514:9</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-eval&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr class="bg-0" data-group="f-23">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\server\chunks\ssr\_14ace5._.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-24">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\server\chunks\ssr\_23d325._.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-25">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\server\chunks\ssr\_53e0ac._.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-26">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\server\chunks\ssr\_6bc0f1._.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-27">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\server\chunks\ssr\_6d0892._.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-2" data-group="f-28">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\server\chunks\ssr\node_modules_36e229._.js
+        <span>7 problems (1 error, 6 warnings)</span>
+    </th>
+</tr>
+<tr style="display: none;" class="f-28">
+    <td>98:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;react-hooks/rules-of-hooks&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-28">
+    <td>869:1</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;import/no-extraneous-dependencies&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-28">
+    <td>1103:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;react-hooks/rules-of-hooks&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-28">
+    <td>1778:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-throw-literal&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-28">
+    <td>1811:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-throw-literal&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-28">
+    <td>1845:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-throw-literal&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-28">
+    <td>3086:31</td>
+    <td class="clr-2">Error</td>
+    <td>Do not use findDOMNode. It doesn’t work with function components and is deprecated in StrictMode. See https://reactjs.org/docs/react-dom.html#finddomnode</td>
+    <td>
+        <a href="https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/no-find-dom-node.md" target="_blank" rel="noopener noreferrer">react/no-find-dom-node</a>
+    </td>
+</tr>
+
+<tr class="bg-2" data-group="f-29">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\server\chunks\ssr\node_modules_51c681._.js
+        <span>35 problems (3 errors, 32 warnings)</span>
+    </th>
+</tr>
+<tr style="display: none;" class="f-29">
+    <td>380:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-eq-null&#39; or &#39;eqeqeq&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-29">
+    <td>437:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;func-names&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-29">
+    <td>439:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;func-names&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-29">
+    <td>1918:1</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;func-names&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-29">
+    <td>1979:9</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-param-reassign&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-29">
+    <td>2020:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-param-reassign&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-29">
+    <td>2022:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-param-reassign&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-29">
+    <td>2028:9</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-eq-null&#39; or &#39;eqeqeq&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-29">
+    <td>2032:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-use-before-define&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-29">
+    <td>2069:17</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-param-reassign&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-29">
+    <td>2071:17</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-param-reassign&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-29">
+    <td>2074:17</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-param-reassign&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-29">
+    <td>2077:219</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-nested-ternary&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-29">
+    <td>2165:56</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-undef&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-29">
+    <td>2519:1</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;func-names&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-29">
+    <td>2545:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;func-names&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-29">
+    <td>2552:13</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-console&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-29">
+    <td>2560:9</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-console&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-29">
+    <td>2991:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-param-reassign&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-29">
+    <td>3006:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;consistent-return&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-29">
+    <td>3014:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;consistent-return&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-29">
+    <td>3020:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;consistent-return&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-29">
+    <td>3028:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;consistent-return&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-29">
+    <td>3693:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;import/no-extraneous-dependencies&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-29">
+    <td>3990:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;complexity&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-29">
+    <td>4005:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-return-assign&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-29">
+    <td>5280:5</td>
+    <td class="clr-2">Error</td>
+    <td>Rule &#34;no-param-reassign&#34; is already configured by another configuration comment in the preceding code. This configuration is ignored.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-29">
+    <td>5383:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-eq-null&#39; or &#39;eqeqeq&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-29">
+    <td>6329:13</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;func-names&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-29">
+    <td>6698:9</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-empty&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-29">
+    <td>6892:9</td>
+    <td class="clr-2">Error</td>
+    <td>Rule &#34;no-param-reassign&#34; is already configured by another configuration comment in the preceding code. This configuration is ignored.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-29">
+    <td>7022:5</td>
+    <td class="clr-2">Error</td>
+    <td>Rule &#34;func-names&#34; is already configured by another configuration comment in the preceding code. This configuration is ignored.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-29">
+    <td>7066:9</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;func-names&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-29">
+    <td>7075:9</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;func-names&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-29">
+    <td>7078:13</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;func-names&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr class="bg-2" data-group="f-30">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\server\chunks\ssr\node_modules_7a9db9._.js
+        <span>35 problems (3 errors, 32 warnings)</span>
+    </th>
+</tr>
+<tr style="display: none;" class="f-30">
+    <td>406:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-eq-null&#39; or &#39;eqeqeq&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-30">
+    <td>463:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;func-names&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-30">
+    <td>465:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;func-names&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-30">
+    <td>1944:1</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;func-names&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-30">
+    <td>2005:9</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-param-reassign&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-30">
+    <td>2046:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-param-reassign&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-30">
+    <td>2048:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-param-reassign&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-30">
+    <td>2054:9</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-eq-null&#39; or &#39;eqeqeq&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-30">
+    <td>2058:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-use-before-define&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-30">
+    <td>2095:17</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-param-reassign&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-30">
+    <td>2097:17</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-param-reassign&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-30">
+    <td>2100:17</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-param-reassign&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-30">
+    <td>2103:219</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-nested-ternary&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-30">
+    <td>2191:56</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-undef&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-30">
+    <td>2545:1</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;func-names&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-30">
+    <td>2571:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;func-names&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-30">
+    <td>2578:13</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-console&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-30">
+    <td>2586:9</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-console&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-30">
+    <td>3017:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-param-reassign&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-30">
+    <td>3032:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;consistent-return&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-30">
+    <td>3040:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;consistent-return&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-30">
+    <td>3046:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;consistent-return&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-30">
+    <td>3054:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;consistent-return&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-30">
+    <td>3719:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;import/no-extraneous-dependencies&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-30">
+    <td>4016:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;complexity&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-30">
+    <td>4031:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-return-assign&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-30">
+    <td>5306:5</td>
+    <td class="clr-2">Error</td>
+    <td>Rule &#34;no-param-reassign&#34; is already configured by another configuration comment in the preceding code. This configuration is ignored.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-30">
+    <td>5409:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-eq-null&#39; or &#39;eqeqeq&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-30">
+    <td>6355:13</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;func-names&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-30">
+    <td>6724:9</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-empty&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-30">
+    <td>6918:9</td>
+    <td class="clr-2">Error</td>
+    <td>Rule &#34;no-param-reassign&#34; is already configured by another configuration comment in the preceding code. This configuration is ignored.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-30">
+    <td>7048:5</td>
+    <td class="clr-2">Error</td>
+    <td>Rule &#34;func-names&#34; is already configured by another configuration comment in the preceding code. This configuration is ignored.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-30">
+    <td>7092:9</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;func-names&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-30">
+    <td>7101:9</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;func-names&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-30">
+    <td>7104:13</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;func-names&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr class="bg-1" data-group="f-31">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\server\chunks\ssr\node_modules_9b9ef4._.js
+        <span>1 problem (0 errors, 1 warning)</span>
+    </th>
+</tr>
+<tr style="display: none;" class="f-31">
+    <td>1432:1</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-shadow&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr class="bg-1" data-group="f-32">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\server\chunks\ssr\node_modules_abd7c8._.js
+        <span>2 problems (0 errors, 2 warnings)</span>
+    </th>
+</tr>
+<tr style="display: none;" class="f-32">
+    <td>1508:1</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-shadow&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-32">
+    <td>4800:9</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;default-case&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr class="bg-0" data-group="f-33">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\server\chunks\ssr\node_modules_ce97a5._.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-1" data-group="f-34">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\server\chunks\ssr\node_modules_next_a3f207._.js
+        <span>2 problems (0 errors, 2 warnings)</span>
+    </th>
+</tr>
+<tr style="display: none;" class="f-34">
+    <td>408:17</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-control-regex&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-34">
+    <td>412:17</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-control-regex&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr class="bg-2" data-group="f-35">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\server\chunks\ssr\node_modules_next_dist_97f32f._.js
+        <span>10 problems (1 error, 9 warnings)</span>
+    </th>
+</tr>
+<tr style="display: none;" class="f-35">
+    <td>6567:1</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-shadow&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-35">
+    <td>8480:1</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;import/no-extraneous-dependencies&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-35">
+    <td>8845:1</td>
+    <td class="clr-2">Error</td>
+    <td>Definition for rule &#39;@typescript-eslint/no-unused-vars&#39; was not found.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">@typescript-eslint/no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-35">
+    <td>10359:1</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-redeclare&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-35">
+    <td>12567:81</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;eqeqeq&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-35">
+    <td>12570:55</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;eqeqeq&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-35">
+    <td>12572:33</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;eqeqeq&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-35">
+    <td>15040:1</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;import/no-extraneous-dependencies&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-35">
+    <td>15042:1</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;import/no-extraneous-dependencies&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-35">
+    <td>15549:1</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;import/no-extraneous-dependencies&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr class="bg-0" data-group="f-36">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\server\chunks\ssr\node_modules_next_dist_client_components_forbidden-error_b4e556.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-37">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\server\chunks\ssr\node_modules_next_dist_client_components_unauthorized-error_d758e6.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-38">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\server\chunks\ssr\src_app_896cde._.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-39">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\server\chunks\ssr\src_app_layout_2939fb.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-40">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\server\chunks\ssr\src_app_page_6a3ebd.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-41">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\server\interception-route-rewrite-manifest.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-42">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\server\middleware-build-manifest.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-43">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\server\middleware-react-loadable-manifest.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-44">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\server\next-font-manifest.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-45">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\server\pages\_app.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-46">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\server\pages\_document.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-47">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\server\pages\_error.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-48">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\server\server-reference-manifest.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-49">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\static\chunks\[root of the server]__2e1cf5._.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-2" data-group="f-50">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\static\chunks\[root of the server]__31723f._.js
+        <span>10 problems (2 errors, 8 warnings)</span>
+    </th>
+</tr>
+<tr style="display: none;" class="f-50">
+    <td>698:35</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-proto&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-50">
+    <td>1067:13</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;array-callback-return&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-50">
+    <td>6720:9</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;array-callback-return&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-50">
+    <td>6847:9</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-sequences&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-50">
+    <td>10225:29</td>
+    <td class="clr-2">Error</td>
+    <td>Definition for rule &#39;@typescript-eslint/no-unused-vars&#39; was not found.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">@typescript-eslint/no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-50">
+    <td>10582:5</td>
+    <td class="clr-2">Error</td>
+    <td>Definition for rule &#39;@typescript-eslint/no-unused-vars&#39; was not found.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">@typescript-eslint/no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-50">
+    <td>12545:9</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-unused-vars&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-50">
+    <td>18753:60</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-50">
+    <td>20104:9</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;default-case&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-50">
+    <td>20628:9</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;default-case&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr class="bg-0" data-group="f-51">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\static\chunks\[root of the server]__f265a1._.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-2" data-group="f-52">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\static\chunks\[root of the server]__f81d50._.js
+        <span>9 problems (2 errors, 7 warnings)</span>
+    </th>
+</tr>
+<tr style="display: none;" class="f-52">
+    <td>698:35</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-proto&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-52">
+    <td>1067:13</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;array-callback-return&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-52">
+    <td>6720:9</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;array-callback-return&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-52">
+    <td>6847:9</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-sequences&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-52">
+    <td>10225:29</td>
+    <td class="clr-2">Error</td>
+    <td>Definition for rule &#39;@typescript-eslint/no-unused-vars&#39; was not found.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">@typescript-eslint/no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-52">
+    <td>10582:5</td>
+    <td class="clr-2">Error</td>
+    <td>Definition for rule &#39;@typescript-eslint/no-unused-vars&#39; was not found.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">@typescript-eslint/no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-52">
+    <td>12545:9</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-unused-vars&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-52">
+    <td>18753:60</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-52">
+    <td>20104:9</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;default-case&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr class="bg-0" data-group="f-53">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\static\chunks\[turbopack]_browser_dev_hmr-client_d6d8d4._.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-54">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\static\chunks\[turbopack]_browser_dev_hmr-client_hmr-client_ts_8e6352._.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-55">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\static\chunks\[turbopack]_browser_dev_hmr-client_hmr-client_ts_d0a96d._.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-2" data-group="f-56">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\static\chunks\_a91c21._.js
+        <span>1 problem (1 error, 0 warnings)</span>
+    </th>
+</tr>
+<tr style="display: none;" class="f-56">
+    <td>211:31</td>
+    <td class="clr-2">Error</td>
+    <td>Do not use findDOMNode. It doesn’t work with function components and is deprecated in StrictMode. See https://reactjs.org/docs/react-dom.html#finddomnode</td>
+    <td>
+        <a href="https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/no-find-dom-node.md" target="_blank" rel="noopener noreferrer">react/no-find-dom-node</a>
+    </td>
+</tr>
+
+<tr class="bg-2" data-group="f-57">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\static\chunks\_d95469._.js
+        <span>14 problems (13 errors, 1 warning)</span>
+    </th>
+</tr>
+<tr style="display: none;" class="f-57">
+    <td>19:5</td>
+    <td class="clr-2">Error</td>
+    <td>Definition for rule &#39;@typescript-eslint/no-unused-vars&#39; was not found.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">@typescript-eslint/no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-57">
+    <td>142:5</td>
+    <td class="clr-2">Error</td>
+    <td>Do not assign to the variable `module`. See: https://nextjs.org/docs/messages/no-assign-module-variable</td>
+    <td>
+        <a href="https://nextjs.org/docs/messages/no-assign-module-variable" target="_blank" rel="noopener noreferrer">@next/next/no-assign-module-variable</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-57">
+    <td>157:5</td>
+    <td class="clr-2">Error</td>
+    <td>Do not assign to the variable `module`. See: https://nextjs.org/docs/messages/no-assign-module-variable</td>
+    <td>
+        <a href="https://nextjs.org/docs/messages/no-assign-module-variable" target="_blank" rel="noopener noreferrer">@next/next/no-assign-module-variable</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-57">
+    <td>355:5</td>
+    <td class="clr-2">Error</td>
+    <td>Definition for rule &#39;@typescript-eslint/no-unused-vars&#39; was not found.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">@typescript-eslint/no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-57">
+    <td>571:5</td>
+    <td class="clr-2">Error</td>
+    <td>Definition for rule &#39;@typescript-eslint/no-unused-vars&#39; was not found.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">@typescript-eslint/no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-57">
+    <td>594:5</td>
+    <td class="clr-2">Error</td>
+    <td>Do not assign to the variable `module`. See: https://nextjs.org/docs/messages/no-assign-module-variable</td>
+    <td>
+        <a href="https://nextjs.org/docs/messages/no-assign-module-variable" target="_blank" rel="noopener noreferrer">@next/next/no-assign-module-variable</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-57">
+    <td>614:5</td>
+    <td class="clr-2">Error</td>
+    <td>Do not assign to the variable `module`. See: https://nextjs.org/docs/messages/no-assign-module-variable</td>
+    <td>
+        <a href="https://nextjs.org/docs/messages/no-assign-module-variable" target="_blank" rel="noopener noreferrer">@next/next/no-assign-module-variable</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-57">
+    <td>673:5</td>
+    <td class="clr-2">Error</td>
+    <td>Do not assign to the variable `module`. See: https://nextjs.org/docs/messages/no-assign-module-variable</td>
+    <td>
+        <a href="https://nextjs.org/docs/messages/no-assign-module-variable" target="_blank" rel="noopener noreferrer">@next/next/no-assign-module-variable</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-57">
+    <td>838:9</td>
+    <td class="clr-2">Error</td>
+    <td>Do not assign to the variable `module`. See: https://nextjs.org/docs/messages/no-assign-module-variable</td>
+    <td>
+        <a href="https://nextjs.org/docs/messages/no-assign-module-variable" target="_blank" rel="noopener noreferrer">@next/next/no-assign-module-variable</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-57">
+    <td>905:5</td>
+    <td class="clr-2">Error</td>
+    <td>Do not assign to the variable `module`. See: https://nextjs.org/docs/messages/no-assign-module-variable</td>
+    <td>
+        <a href="https://nextjs.org/docs/messages/no-assign-module-variable" target="_blank" rel="noopener noreferrer">@next/next/no-assign-module-variable</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-57">
+    <td>1150:9</td>
+    <td class="clr-2">Error</td>
+    <td>Do not assign to the variable `module`. See: https://nextjs.org/docs/messages/no-assign-module-variable</td>
+    <td>
+        <a href="https://nextjs.org/docs/messages/no-assign-module-variable" target="_blank" rel="noopener noreferrer">@next/next/no-assign-module-variable</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-57">
+    <td>1398:5</td>
+    <td class="clr-2">Error</td>
+    <td>Definition for rule &#39;@typescript-eslint/no-unused-vars&#39; was not found.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">@typescript-eslint/no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-57">
+    <td>1555:5</td>
+    <td class="clr-2">Error</td>
+    <td>Definition for rule &#39;@typescript-eslint/no-unused-vars&#39; was not found.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">@typescript-eslint/no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-57">
+    <td>1642:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-eval&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr class="bg-0" data-group="f-58">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\static\chunks\_e69f0d._.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-2" data-group="f-59">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\static\chunks\node_modules_282892._.js
+        <span>33 problems (3 errors, 30 warnings)</span>
+    </th>
+</tr>
+<tr style="display: none;" class="f-59">
+    <td>787:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-eq-null&#39; or &#39;eqeqeq&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-59">
+    <td>844:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;func-names&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-59">
+    <td>846:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;func-names&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-59">
+    <td>1080:1</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;strict&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-59">
+    <td>1169:1</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;func-names&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-59">
+    <td>2758:9</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-param-reassign&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-59">
+    <td>2799:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-param-reassign&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-59">
+    <td>2801:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-param-reassign&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-59">
+    <td>2807:9</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-eq-null&#39; or &#39;eqeqeq&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-59">
+    <td>2811:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-use-before-define&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-59">
+    <td>2848:17</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-param-reassign&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-59">
+    <td>2850:17</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-param-reassign&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-59">
+    <td>2853:17</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-param-reassign&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-59">
+    <td>2856:222</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-nested-ternary&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-59">
+    <td>2944:56</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-undef&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-59">
+    <td>3384:1</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;func-names&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-59">
+    <td>3410:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;func-names&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-59">
+    <td>3417:13</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-console&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-59">
+    <td>3425:9</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-console&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-59">
+    <td>3856:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-param-reassign&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-59">
+    <td>3871:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;consistent-return&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-59">
+    <td>3879:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;consistent-return&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-59">
+    <td>3885:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;consistent-return&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-59">
+    <td>3893:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;consistent-return&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-59">
+    <td>4141:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-eq-null&#39; or &#39;eqeqeq&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-59">
+    <td>4188:5</td>
+    <td class="clr-2">Error</td>
+    <td>Rule &#34;no-param-reassign&#34; is already configured by another configuration comment in the preceding code. This configuration is ignored.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-59">
+    <td>4554:13</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;func-names&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-59">
+    <td>4923:9</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-empty&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-59">
+    <td>5117:9</td>
+    <td class="clr-2">Error</td>
+    <td>Rule &#34;no-param-reassign&#34; is already configured by another configuration comment in the preceding code. This configuration is ignored.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-59">
+    <td>5247:5</td>
+    <td class="clr-2">Error</td>
+    <td>Rule &#34;func-names&#34; is already configured by another configuration comment in the preceding code. This configuration is ignored.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-59">
+    <td>5291:9</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;func-names&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-59">
+    <td>5300:9</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;func-names&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-59">
+    <td>5303:13</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;func-names&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr class="bg-0" data-group="f-60">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\static\chunks\node_modules_@swc_helpers_cjs_00636a._.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-61">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\static\chunks\node_modules_beb007._.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-2" data-group="f-62">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\static\chunks\node_modules_next_dist_4bb10e._.js
+        <span>1 problem (1 error, 0 warnings)</span>
+    </th>
+</tr>
+<tr style="display: none;" class="f-62">
+    <td>838:13</td>
+    <td class="clr-2">Error</td>
+    <td>Definition for rule &#39;@typescript-eslint/no-use-before-define&#39; was not found.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">@typescript-eslint/no-use-before-define</a>
+    </td>
+</tr>
+
+<tr class="bg-0" data-group="f-63">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\static\chunks\node_modules_next_dist_build_polyfills_polyfill-nomodule.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-2" data-group="f-64">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\static\chunks\node_modules_next_dist_client_523921._.js
+        <span>10 problems (1 error, 9 warnings)</span>
+    </th>
+</tr>
+<tr style="display: none;" class="f-64">
+    <td>1690:1</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;import/no-extraneous-dependencies&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-64">
+    <td>3488:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;react-hooks/rules-of-hooks&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-64">
+    <td>4041:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-throw-literal&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-64">
+    <td>4087:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-throw-literal&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-64">
+    <td>4134:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-throw-literal&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-64">
+    <td>6535:29</td>
+    <td class="clr-2">Error</td>
+    <td>Definition for rule &#39;@typescript-eslint/no-unused-vars&#39; was not found.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">@typescript-eslint/no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-64">
+    <td>7560:9</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-unused-vars&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-64">
+    <td>13893:9</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;react-hooks/rules-of-hooks&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-64">
+    <td>14239:9</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;react-hooks/rules-of-hooks&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-64">
+    <td>14242:9</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;react-hooks/rules-of-hooks&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr class="bg-1" data-group="f-65">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\static\chunks\node_modules_next_dist_compiled_107ce8._.js
+        <span>1 problem (0 errors, 1 warning)</span>
+    </th>
+</tr>
+<tr style="display: none;" class="f-65">
+    <td>690:35</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-proto&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr class="bg-2" data-group="f-66">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\static\chunks\node_modules_next_dist_compiled_react-dom_1f56dc._.js
+        <span>13 problems (13 errors, 0 warnings)</span>
+    </th>
+</tr>
+<tr style="display: none;" class="f-66">
+    <td>3038:68</td>
+    <td class="clr-2">Error</td>
+    <td>React Hook &#34;useThenable&#34; is called conditionally. React Hooks must be called in the exact same order in every component render.</td>
+    <td>
+        <a href="https://reactjs.org/docs/hooks-rules.html" target="_blank" rel="noopener noreferrer">react-hooks/rules-of-hooks</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-66">
+    <td>3116:59</td>
+    <td class="clr-2">Error</td>
+    <td>React Hook &#34;useThenable&#34; is called conditionally. React Hooks must be called in the exact same order in every component render. Did you accidentally call a React Hook after an early return?</td>
+    <td>
+        <a href="https://reactjs.org/docs/hooks-rules.html" target="_blank" rel="noopener noreferrer">react-hooks/rules-of-hooks</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-66">
+    <td>3575:25</td>
+    <td class="clr-2">Error</td>
+    <td>React Hook &#34;useThenable&#34; is called in function &#34;updateActionStateImpl&#34; that is neither a React function component nor a custom React Hook function. React component names must start with an uppercase letter. React Hook names must start with the word &#34;use&#34;.</td>
+    <td>
+        <a href="https://reactjs.org/docs/hooks-rules.html" target="_blank" rel="noopener noreferrer">react-hooks/rules-of-hooks</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-66">
+    <td>3851:74</td>
+    <td class="clr-2">Error</td>
+    <td>React Hook &#34;useThenable&#34; is called in function &#34;updateTransition&#34; that is neither a React function component nor a custom React Hook function. React component names must start with an uppercase letter. React Hook names must start with the word &#34;use&#34;.</td>
+    <td>
+        <a href="https://reactjs.org/docs/hooks-rules.html" target="_blank" rel="noopener noreferrer">react-hooks/rules-of-hooks</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-66">
+    <td>3858:74</td>
+    <td class="clr-2">Error</td>
+    <td>React Hook &#34;useThenable&#34; is called in function &#34;rerenderTransition&#34; that is neither a React function component nor a custom React Hook function. React component names must start with an uppercase letter. React Hook names must start with the word &#34;use&#34;.</td>
+    <td>
+        <a href="https://reactjs.org/docs/hooks-rules.html" target="_blank" rel="noopener noreferrer">react-hooks/rules-of-hooks</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-66">
+    <td>4062:23</td>
+    <td class="clr-2">Error</td>
+    <td>React Hook &#34;useFiber&#34; is called in function &#34;updateTextNode&#34; that is neither a React function component nor a custom React Hook function. React component names must start with an uppercase letter. React Hook names must start with the word &#34;use&#34;.</td>
+    <td>
+        <a href="https://reactjs.org/docs/hooks-rules.html" target="_blank" rel="noopener noreferrer">react-hooks/rules-of-hooks</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-66">
+    <td>4070:302</td>
+    <td class="clr-2">Error</td>
+    <td>React Hook &#34;useFiber&#34; is called in function &#34;updateElement&#34; that is neither a React function component nor a custom React Hook function. React component names must start with an uppercase letter. React Hook names must start with the word &#34;use&#34;.</td>
+    <td>
+        <a href="https://reactjs.org/docs/hooks-rules.html" target="_blank" rel="noopener noreferrer">react-hooks/rules-of-hooks</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-66">
+    <td>4079:23</td>
+    <td class="clr-2">Error</td>
+    <td>React Hook &#34;useFiber&#34; is called in function &#34;updatePortal&#34; that is neither a React function component nor a custom React Hook function. React component names must start with an uppercase letter. React Hook names must start with the word &#34;use&#34;.</td>
+    <td>
+        <a href="https://reactjs.org/docs/hooks-rules.html" target="_blank" rel="noopener noreferrer">react-hooks/rules-of-hooks</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-66">
+    <td>4086:23</td>
+    <td class="clr-2">Error</td>
+    <td>React Hook &#34;useFiber&#34; is called in function &#34;updateFragment&#34; that is neither a React function component nor a custom React Hook function. React component names must start with an uppercase letter. React Hook names must start with the word &#34;use&#34;.</td>
+    <td>
+        <a href="https://reactjs.org/docs/hooks-rules.html" target="_blank" rel="noopener noreferrer">react-hooks/rules-of-hooks</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-66">
+    <td>4262:53</td>
+    <td class="clr-2">Error</td>
+    <td>React Hook &#34;useFiber&#34; is called in function &#34;reconcileChildFibersImpl&#34; that is neither a React function component nor a custom React Hook function. React component names must start with an uppercase letter. React Hook names must start with the word &#34;use&#34;.</td>
+    <td>
+        <a href="https://reactjs.org/docs/hooks-rules.html" target="_blank" rel="noopener noreferrer">react-hooks/rules-of-hooks</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-66">
+    <td>4272:49</td>
+    <td class="clr-2">Error</td>
+    <td>React Hook &#34;useFiber&#34; is called in function &#34;reconcileChildFibersImpl&#34; that is neither a React function component nor a custom React Hook function. React component names must start with an uppercase letter. React Hook names must start with the word &#34;use&#34;.</td>
+    <td>
+        <a href="https://reactjs.org/docs/hooks-rules.html" target="_blank" rel="noopener noreferrer">react-hooks/rules-of-hooks</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-66">
+    <td>4296:45</td>
+    <td class="clr-2">Error</td>
+    <td>React Hook &#34;useFiber&#34; is called in function &#34;reconcileChildFibersImpl&#34; that is neither a React function component nor a custom React Hook function. React component names must start with an uppercase letter. React Hook names must start with the word &#34;use&#34;.</td>
+    <td>
+        <a href="https://reactjs.org/docs/hooks-rules.html" target="_blank" rel="noopener noreferrer">react-hooks/rules-of-hooks</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-66">
+    <td>4332:302</td>
+    <td class="clr-2">Error</td>
+    <td>React Hook &#34;useFiber&#34; is called in function &#34;reconcileChildFibersImpl&#34; that is neither a React function component nor a custom React Hook function. React component names must start with an uppercase letter. React Hook names must start with the word &#34;use&#34;.</td>
+    <td>
+        <a href="https://reactjs.org/docs/hooks-rules.html" target="_blank" rel="noopener noreferrer">react-hooks/rules-of-hooks</a>
+    </td>
+</tr>
+
+<tr class="bg-1" data-group="f-67">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\static\chunks\node_modules_next_dist_ea69ac._.js
+        <span>4 problems (0 errors, 4 warnings)</span>
+    </th>
+</tr>
+<tr style="display: none;" class="f-67">
+    <td>220:9</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;default-case&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-67">
+    <td>684:17</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-control-regex&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-67">
+    <td>688:17</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-control-regex&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-67">
+    <td>2900:13</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-self-assign&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr class="bg-2" data-group="f-68">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\static\chunks\node_modules_react-dom_82bb97._.js
+        <span>13 problems (13 errors, 0 warnings)</span>
+    </th>
+</tr>
+<tr style="display: none;" class="f-68">
+    <td>2911:23</td>
+    <td class="clr-2">Error</td>
+    <td>React Hook &#34;useFiber&#34; is called in function &#34;updateTextNode&#34; that is neither a React function component nor a custom React Hook function. React component names must start with an uppercase letter. React Hook names must start with the word &#34;use&#34;.</td>
+    <td>
+        <a href="https://reactjs.org/docs/hooks-rules.html" target="_blank" rel="noopener noreferrer">react-hooks/rules-of-hooks</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-68">
+    <td>2919:302</td>
+    <td class="clr-2">Error</td>
+    <td>React Hook &#34;useFiber&#34; is called in function &#34;updateElement&#34; that is neither a React function component nor a custom React Hook function. React component names must start with an uppercase letter. React Hook names must start with the word &#34;use&#34;.</td>
+    <td>
+        <a href="https://reactjs.org/docs/hooks-rules.html" target="_blank" rel="noopener noreferrer">react-hooks/rules-of-hooks</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-68">
+    <td>2928:23</td>
+    <td class="clr-2">Error</td>
+    <td>React Hook &#34;useFiber&#34; is called in function &#34;updatePortal&#34; that is neither a React function component nor a custom React Hook function. React component names must start with an uppercase letter. React Hook names must start with the word &#34;use&#34;.</td>
+    <td>
+        <a href="https://reactjs.org/docs/hooks-rules.html" target="_blank" rel="noopener noreferrer">react-hooks/rules-of-hooks</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-68">
+    <td>2935:23</td>
+    <td class="clr-2">Error</td>
+    <td>React Hook &#34;useFiber&#34; is called in function &#34;updateFragment&#34; that is neither a React function component nor a custom React Hook function. React component names must start with an uppercase letter. React Hook names must start with the word &#34;use&#34;.</td>
+    <td>
+        <a href="https://reactjs.org/docs/hooks-rules.html" target="_blank" rel="noopener noreferrer">react-hooks/rules-of-hooks</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-68">
+    <td>3111:53</td>
+    <td class="clr-2">Error</td>
+    <td>React Hook &#34;useFiber&#34; is called in function &#34;reconcileChildFibersImpl&#34; that is neither a React function component nor a custom React Hook function. React component names must start with an uppercase letter. React Hook names must start with the word &#34;use&#34;.</td>
+    <td>
+        <a href="https://reactjs.org/docs/hooks-rules.html" target="_blank" rel="noopener noreferrer">react-hooks/rules-of-hooks</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-68">
+    <td>3121:49</td>
+    <td class="clr-2">Error</td>
+    <td>React Hook &#34;useFiber&#34; is called in function &#34;reconcileChildFibersImpl&#34; that is neither a React function component nor a custom React Hook function. React component names must start with an uppercase letter. React Hook names must start with the word &#34;use&#34;.</td>
+    <td>
+        <a href="https://reactjs.org/docs/hooks-rules.html" target="_blank" rel="noopener noreferrer">react-hooks/rules-of-hooks</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-68">
+    <td>3145:45</td>
+    <td class="clr-2">Error</td>
+    <td>React Hook &#34;useFiber&#34; is called in function &#34;reconcileChildFibersImpl&#34; that is neither a React function component nor a custom React Hook function. React component names must start with an uppercase letter. React Hook names must start with the word &#34;use&#34;.</td>
+    <td>
+        <a href="https://reactjs.org/docs/hooks-rules.html" target="_blank" rel="noopener noreferrer">react-hooks/rules-of-hooks</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-68">
+    <td>3181:302</td>
+    <td class="clr-2">Error</td>
+    <td>React Hook &#34;useFiber&#34; is called in function &#34;reconcileChildFibersImpl&#34; that is neither a React function component nor a custom React Hook function. React component names must start with an uppercase letter. React Hook names must start with the word &#34;use&#34;.</td>
+    <td>
+        <a href="https://reactjs.org/docs/hooks-rules.html" target="_blank" rel="noopener noreferrer">react-hooks/rules-of-hooks</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-68">
+    <td>3463:68</td>
+    <td class="clr-2">Error</td>
+    <td>React Hook &#34;useThenable&#34; is called conditionally. React Hooks must be called in the exact same order in every component render.</td>
+    <td>
+        <a href="https://reactjs.org/docs/hooks-rules.html" target="_blank" rel="noopener noreferrer">react-hooks/rules-of-hooks</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-68">
+    <td>3541:59</td>
+    <td class="clr-2">Error</td>
+    <td>React Hook &#34;useThenable&#34; is called conditionally. React Hooks must be called in the exact same order in every component render. Did you accidentally call a React Hook after an early return?</td>
+    <td>
+        <a href="https://reactjs.org/docs/hooks-rules.html" target="_blank" rel="noopener noreferrer">react-hooks/rules-of-hooks</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-68">
+    <td>4003:143</td>
+    <td class="clr-2">Error</td>
+    <td>React Hook &#34;useThenable&#34; is called in function &#34;updateActionStateImpl&#34; that is neither a React function component nor a custom React Hook function. React component names must start with an uppercase letter. React Hook names must start with the word &#34;use&#34;.</td>
+    <td>
+        <a href="https://reactjs.org/docs/hooks-rules.html" target="_blank" rel="noopener noreferrer">react-hooks/rules-of-hooks</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-68">
+    <td>4270:74</td>
+    <td class="clr-2">Error</td>
+    <td>React Hook &#34;useThenable&#34; is called in function &#34;updateTransition&#34; that is neither a React function component nor a custom React Hook function. React component names must start with an uppercase letter. React Hook names must start with the word &#34;use&#34;.</td>
+    <td>
+        <a href="https://reactjs.org/docs/hooks-rules.html" target="_blank" rel="noopener noreferrer">react-hooks/rules-of-hooks</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-68">
+    <td>4277:74</td>
+    <td class="clr-2">Error</td>
+    <td>React Hook &#34;useThenable&#34; is called in function &#34;rerenderTransition&#34; that is neither a React function component nor a custom React Hook function. React component names must start with an uppercase letter. React Hook names must start with the word &#34;use&#34;.</td>
+    <td>
+        <a href="https://reactjs.org/docs/hooks-rules.html" target="_blank" rel="noopener noreferrer">react-hooks/rules-of-hooks</a>
+    </td>
+</tr>
+
+<tr class="bg-0" data-group="f-69">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\static\chunks\pages\_app.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-70">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\static\chunks\pages\_error.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-71">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\static\chunks\pages__app_5771e1._.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-2" data-group="f-72">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\static\chunks\pages__app_f2320d._.js
+        <span>14 problems (13 errors, 1 warning)</span>
+    </th>
+</tr>
+<tr style="display: none;" class="f-72">
+    <td>19:5</td>
+    <td class="clr-2">Error</td>
+    <td>Definition for rule &#39;@typescript-eslint/no-unused-vars&#39; was not found.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">@typescript-eslint/no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-72">
+    <td>142:5</td>
+    <td class="clr-2">Error</td>
+    <td>Do not assign to the variable `module`. See: https://nextjs.org/docs/messages/no-assign-module-variable</td>
+    <td>
+        <a href="https://nextjs.org/docs/messages/no-assign-module-variable" target="_blank" rel="noopener noreferrer">@next/next/no-assign-module-variable</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-72">
+    <td>157:5</td>
+    <td class="clr-2">Error</td>
+    <td>Do not assign to the variable `module`. See: https://nextjs.org/docs/messages/no-assign-module-variable</td>
+    <td>
+        <a href="https://nextjs.org/docs/messages/no-assign-module-variable" target="_blank" rel="noopener noreferrer">@next/next/no-assign-module-variable</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-72">
+    <td>355:5</td>
+    <td class="clr-2">Error</td>
+    <td>Definition for rule &#39;@typescript-eslint/no-unused-vars&#39; was not found.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">@typescript-eslint/no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-72">
+    <td>571:5</td>
+    <td class="clr-2">Error</td>
+    <td>Definition for rule &#39;@typescript-eslint/no-unused-vars&#39; was not found.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">@typescript-eslint/no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-72">
+    <td>594:5</td>
+    <td class="clr-2">Error</td>
+    <td>Do not assign to the variable `module`. See: https://nextjs.org/docs/messages/no-assign-module-variable</td>
+    <td>
+        <a href="https://nextjs.org/docs/messages/no-assign-module-variable" target="_blank" rel="noopener noreferrer">@next/next/no-assign-module-variable</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-72">
+    <td>614:5</td>
+    <td class="clr-2">Error</td>
+    <td>Do not assign to the variable `module`. See: https://nextjs.org/docs/messages/no-assign-module-variable</td>
+    <td>
+        <a href="https://nextjs.org/docs/messages/no-assign-module-variable" target="_blank" rel="noopener noreferrer">@next/next/no-assign-module-variable</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-72">
+    <td>673:5</td>
+    <td class="clr-2">Error</td>
+    <td>Do not assign to the variable `module`. See: https://nextjs.org/docs/messages/no-assign-module-variable</td>
+    <td>
+        <a href="https://nextjs.org/docs/messages/no-assign-module-variable" target="_blank" rel="noopener noreferrer">@next/next/no-assign-module-variable</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-72">
+    <td>838:9</td>
+    <td class="clr-2">Error</td>
+    <td>Do not assign to the variable `module`. See: https://nextjs.org/docs/messages/no-assign-module-variable</td>
+    <td>
+        <a href="https://nextjs.org/docs/messages/no-assign-module-variable" target="_blank" rel="noopener noreferrer">@next/next/no-assign-module-variable</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-72">
+    <td>905:5</td>
+    <td class="clr-2">Error</td>
+    <td>Do not assign to the variable `module`. See: https://nextjs.org/docs/messages/no-assign-module-variable</td>
+    <td>
+        <a href="https://nextjs.org/docs/messages/no-assign-module-variable" target="_blank" rel="noopener noreferrer">@next/next/no-assign-module-variable</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-72">
+    <td>1150:9</td>
+    <td class="clr-2">Error</td>
+    <td>Do not assign to the variable `module`. See: https://nextjs.org/docs/messages/no-assign-module-variable</td>
+    <td>
+        <a href="https://nextjs.org/docs/messages/no-assign-module-variable" target="_blank" rel="noopener noreferrer">@next/next/no-assign-module-variable</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-72">
+    <td>1398:5</td>
+    <td class="clr-2">Error</td>
+    <td>Definition for rule &#39;@typescript-eslint/no-unused-vars&#39; was not found.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">@typescript-eslint/no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-72">
+    <td>1555:5</td>
+    <td class="clr-2">Error</td>
+    <td>Definition for rule &#39;@typescript-eslint/no-unused-vars&#39; was not found.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">@typescript-eslint/no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-72">
+    <td>1642:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-eval&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr class="bg-0" data-group="f-73">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\static\chunks\pages__error_5771e1._.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-2" data-group="f-74">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\static\chunks\pages__error_b8c4c3._.js
+        <span>14 problems (13 errors, 1 warning)</span>
+    </th>
+</tr>
+<tr style="display: none;" class="f-74">
+    <td>19:5</td>
+    <td class="clr-2">Error</td>
+    <td>Definition for rule &#39;@typescript-eslint/no-unused-vars&#39; was not found.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">@typescript-eslint/no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-74">
+    <td>142:5</td>
+    <td class="clr-2">Error</td>
+    <td>Do not assign to the variable `module`. See: https://nextjs.org/docs/messages/no-assign-module-variable</td>
+    <td>
+        <a href="https://nextjs.org/docs/messages/no-assign-module-variable" target="_blank" rel="noopener noreferrer">@next/next/no-assign-module-variable</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-74">
+    <td>157:5</td>
+    <td class="clr-2">Error</td>
+    <td>Do not assign to the variable `module`. See: https://nextjs.org/docs/messages/no-assign-module-variable</td>
+    <td>
+        <a href="https://nextjs.org/docs/messages/no-assign-module-variable" target="_blank" rel="noopener noreferrer">@next/next/no-assign-module-variable</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-74">
+    <td>355:5</td>
+    <td class="clr-2">Error</td>
+    <td>Definition for rule &#39;@typescript-eslint/no-unused-vars&#39; was not found.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">@typescript-eslint/no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-74">
+    <td>571:5</td>
+    <td class="clr-2">Error</td>
+    <td>Definition for rule &#39;@typescript-eslint/no-unused-vars&#39; was not found.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">@typescript-eslint/no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-74">
+    <td>594:5</td>
+    <td class="clr-2">Error</td>
+    <td>Do not assign to the variable `module`. See: https://nextjs.org/docs/messages/no-assign-module-variable</td>
+    <td>
+        <a href="https://nextjs.org/docs/messages/no-assign-module-variable" target="_blank" rel="noopener noreferrer">@next/next/no-assign-module-variable</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-74">
+    <td>614:5</td>
+    <td class="clr-2">Error</td>
+    <td>Do not assign to the variable `module`. See: https://nextjs.org/docs/messages/no-assign-module-variable</td>
+    <td>
+        <a href="https://nextjs.org/docs/messages/no-assign-module-variable" target="_blank" rel="noopener noreferrer">@next/next/no-assign-module-variable</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-74">
+    <td>673:5</td>
+    <td class="clr-2">Error</td>
+    <td>Do not assign to the variable `module`. See: https://nextjs.org/docs/messages/no-assign-module-variable</td>
+    <td>
+        <a href="https://nextjs.org/docs/messages/no-assign-module-variable" target="_blank" rel="noopener noreferrer">@next/next/no-assign-module-variable</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-74">
+    <td>838:9</td>
+    <td class="clr-2">Error</td>
+    <td>Do not assign to the variable `module`. See: https://nextjs.org/docs/messages/no-assign-module-variable</td>
+    <td>
+        <a href="https://nextjs.org/docs/messages/no-assign-module-variable" target="_blank" rel="noopener noreferrer">@next/next/no-assign-module-variable</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-74">
+    <td>905:5</td>
+    <td class="clr-2">Error</td>
+    <td>Do not assign to the variable `module`. See: https://nextjs.org/docs/messages/no-assign-module-variable</td>
+    <td>
+        <a href="https://nextjs.org/docs/messages/no-assign-module-variable" target="_blank" rel="noopener noreferrer">@next/next/no-assign-module-variable</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-74">
+    <td>1150:9</td>
+    <td class="clr-2">Error</td>
+    <td>Do not assign to the variable `module`. See: https://nextjs.org/docs/messages/no-assign-module-variable</td>
+    <td>
+        <a href="https://nextjs.org/docs/messages/no-assign-module-variable" target="_blank" rel="noopener noreferrer">@next/next/no-assign-module-variable</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-74">
+    <td>1398:5</td>
+    <td class="clr-2">Error</td>
+    <td>Definition for rule &#39;@typescript-eslint/no-unused-vars&#39; was not found.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">@typescript-eslint/no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-74">
+    <td>1555:5</td>
+    <td class="clr-2">Error</td>
+    <td>Definition for rule &#39;@typescript-eslint/no-unused-vars&#39; was not found.</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer">@typescript-eslint/no-unused-vars</a>
+    </td>
+</tr>
+
+<tr style="display: none;" class="f-74">
+    <td>1642:5</td>
+    <td class="clr-1">Warning</td>
+    <td>Unused eslint-disable directive (no problems were reported from &#39;no-eval&#39;).</td>
+    <td>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
+    </td>
+</tr>
+
+<tr class="bg-0" data-group="f-75">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\static\chunks\src_30b1f7._.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-76">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\static\chunks\src_926eaf._.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-77">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\static\chunks\src_app_favicon_ico_mjs_ddfdf0._.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-78">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\static\chunks\src_app_layout_4b4952.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-79">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\static\chunks\src_app_layout_61af54.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-80">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\static\chunks\src_app_page_19ad6a.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-81">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\static\chunks\src_app_page_71263d.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-82">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\static\chunks\src_app_page_b49d35.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-83">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\static\chunks\src_app_page_c894ac.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-84">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\static\development\_buildManifest.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-85">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\static\development\_ssgManifest.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-86">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\.next\transform.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-87">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\eslint.config.mjs
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-88">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\next.config.mjs
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-89">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\postcss.config.mjs
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-90">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\src\app\layout.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-91">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\src\app\page.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-92">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\src\components\BackendMessage.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-0" data-group="f-93">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\src\services\api.js
+        <span>0 problems</span>
+    </th>
+</tr>
+
+<tr class="bg-1" data-group="f-94">
+    <th colspan="4">
+        [+] D:\INGENIERIA DE SISTEMAS Y COMPUTACION\Semester 5\Software Engineering\Project\Proyecto\Frontend\my-app\tailwind.config.mjs
+        <span>1 problem (0 errors, 1 warning)</span>
+    </th>
+</tr>
+<tr style="display: none;" class="f-94">
+    <td>2:1</td>
+    <td class="clr-1">Warning</td>
+    <td>Assign object to a variable before exporting as module default</td>
+    <td>
+        <a href="https://github.com/import-js/eslint-plugin-import/blob/v2.31.0/docs/rules/no-anonymous-default-export.md" target="_blank" rel="noopener noreferrer">import/no-anonymous-default-export</a>
+    </td>
+</tr>
+
+            </tbody>
+        </table>
+        <script type="text/javascript">
+            var groups = document.querySelectorAll("tr[data-group]");
+            for (i = 0; i < groups.length; i++) {
+                groups[i].addEventListener("click", function() {
+                    var inGroup = document.getElementsByClassName(this.getAttribute("data-group"));
+                    this.innerHTML = (this.innerHTML.indexOf("+") > -1) ? this.innerHTML.replace("+", "-") : this.innerHTML.replace("-", "+");
+                    for (var j = 0; j < inGroup.length; j++) {
+                        inGroup[j].style.display = (inGroup[j].style.display !== "none") ? "none" : "table-row";
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>
