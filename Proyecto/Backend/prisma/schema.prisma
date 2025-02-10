@@ -1,0 +1,98 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+
+// prisma/schema.prisma
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Usuario {
+  id         Int      @id @default(autoincrement())
+  nombre     String
+  correo     String   @unique
+  contrasena String
+  rol        Rol      @default(usuario)
+  Ensamble   Ensamble[]
+  Carrito    Carrito[]
+  Notificacion Notificacion[]
+  Historial_Compras Historial_Compras[]
+}
+
+model Componente {
+  id           Int                  @id @default(autoincrement())
+  nombre       String
+  categoria    Categoria
+  precio       Float
+  marca        String
+  especificaciones String?
+  Ensamble     Ensamble_Componentes[]
+  Carrito      Carrito[]
+}
+
+model Ensamble {
+  id           Int                  @id @default(autoincrement())
+  usuarioId    Int
+  nombre       String
+  costo_total  Float                @default(0)
+  fecha_creacion DateTime           @default(now())
+  usuario      Usuario              @relation(fields: [usuarioId], references: [id], onDelete: Cascade)
+  Componente   Ensamble_Componentes[]
+}
+
+model Ensamble_Componentes {
+  ensambleId   Int
+  componenteId Int
+  Ensamble     Ensamble     @relation(fields: [ensambleId], references: [id], onDelete: Cascade)
+  Componente   Componente   @relation(fields: [componenteId], references: [id], onDelete: Cascade)
+  
+  @@id([ensambleId, componenteId])
+}
+
+model Notificacion {
+  id           Int      @id @default(autoincrement())
+  usuarioId    Int
+  mensaje      String
+  fecha        DateTime @default(now())
+  usuario      Usuario  @relation(fields: [usuarioId], references: [id], onDelete: Cascade)
+}
+
+model Carrito {
+  id           Int      @id @default(autoincrement())
+  usuarioId    Int
+  componenteId Int
+  cantidad     Int      @default(0)
+  usuario      Usuario  @relation(fields: [usuarioId], references: [id], onDelete: Cascade)
+  Componente   Componente @relation(fields: [componenteId], references: [id], onDelete: Cascade)
+}
+
+model Historial_Compras {
+  id           Int      @id @default(autoincrement())
+  usuarioId    Int
+  fecha        DateTime @default(now())
+  total        Float
+  usuario      Usuario  @relation(fields: [usuarioId], references: [id], onDelete: Cascade)
+}
+
+enum Rol {
+  usuario
+  admin
+}
+
+enum Categoria {
+  CPU
+  GPU
+  RAM
+  Motherboard
+  Almacenamiento
+  Fuente
+  Gabinete
+}
