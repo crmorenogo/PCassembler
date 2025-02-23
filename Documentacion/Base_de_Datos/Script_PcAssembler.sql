@@ -27,13 +27,16 @@ CREATE TABLE Ensamble (
     nombre VARCHAR(100) NOT NULL,
     costo_total DECIMAL(10,2) DEFAULT 0 NOT NULL,
     fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
-    FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario) ON DELETE CASCADE
+    FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario) ON DELETE CASCADE
 );
 
 -- Tabla de Ensamble_Componente (Relación muchos a muchos)
-CREATE TABLE Ensamble_Componentes (
-    FOREIGN KEY (id_ensamble) REFERENCES Ensambles(id_ensamble) ON DELETE CASCADE,
-    FOREIGN KEY (id_componente) REFERENCES Componentes(id_componente) ON DELETE CASCADE
+CREATE TABLE Ensamble_Componente (
+    id_ensamble INT NOT NULL,
+    id_componente INT NOT NULL,
+    PRIMARY KEY (id_ensamble, id_componente),
+    FOREIGN KEY (id_ensamble) REFERENCES Ensamble(id_ensamble) ON DELETE CASCADE,
+    FOREIGN KEY (id_componente) REFERENCES Componente(id_componente) ON DELETE CASCADE
 );
 
 -- Tabla de Notificacion
@@ -42,24 +45,34 @@ CREATE TABLE Notificacion (
     id_usuario INT NOT NULL,
     mensaje TEXT NOT NULL,
     fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
-    FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario) ON DELETE CASCADE
+    FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario) ON DELETE CASCADE
 );
 
--- Tabla de Carrito de Compras
+-- Tabla de Carrito
 CREATE TABLE Carrito (
     id_carrito INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     id_usuario INT NOT NULL,
     id_componente INT NOT NULL,
     cantidad INT DEFAULT 0,
-    FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario) ON DELETE CASCADE,
-    FOREIGN KEY (id_componente) REFERENCES Componentes(id_componente) ON DELETE CASCADE
+    FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario) ON DELETE CASCADE,
+    FOREIGN KEY (id_componente) REFERENCES Componente(id_componente) ON DELETE CASCADE
 );
 
--- Tabla de Historial de Compras
+-- Tabla de Historial_Compras
 CREATE TABLE Historial_Compras (
     id_compra INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     id_usuario INT NOT NULL,
     fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
     total DECIMAL(10,2) NOT NULL,
-    FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario) ON DELETE CASCADE
+    FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario) ON DELETE CASCADE
+);
+
+-- Tabla de Ensambles_Top
+CREATE TABLE Ensambles_Top (
+    id_top INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    id_ensamble INT NOT NULL,
+    descripcion TEXT NOT NULL,
+    calificacion INT CHECK (calificacion >= 0 AND calificacion <= 5),
+    precio_aproximado DECIMAL(10,2),
+    FOREIGN KEY (id_ensamble) REFERENCES Ensamble(id_ensamble) ON DELETE CASCADE
 );

@@ -1,11 +1,13 @@
-// pages/Page.js
-import React from 'react';
-import Layout from './layout';
+// src/app/page.js
+"use client"; // Ensure this is a client component
 
-const Page = () => {
+import BackendMessage from "@/components/BackendMessage"; // Adjust the path if needed
+
+export default function Page() {
   return (
-      <Layout/>
+    <div>
+      <h2>Welcome to PCAssembler</h2>
+      <BackendMessage />
+    </div>
   );
-};
-
-export default Page;
+}

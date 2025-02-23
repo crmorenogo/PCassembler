@@ -1,6 +1,7 @@
 # Created by https://www.toptal.com/developers/gitignore/api/windows,linux,visualstudiocode,pycharm,nextjs,vercel
 # Edit at https://www.toptal.com/developers/gitignore?templates=windows,linux,visualstudiocode,pycharm,nextjs,vercel
 .idea
+node_modules
 ### Linux ###
 *~
 
