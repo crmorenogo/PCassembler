@@ -2,7 +2,7 @@
 import { PrismaClient } from '@prisma/client';
 import fs from 'fs';
 import path from 'path';
-
+//Hola
 const prisma = new PrismaClient();
 
 // Obtener la ruta del archivo JSON de manera relativa
