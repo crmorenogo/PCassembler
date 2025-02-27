@@ -14,32 +14,36 @@ const JWT_SECRET = process.env.JWT_SECRET; // Usar JWT_SECRET desde el archivo .
 // Función para crear un nuevo usuario
 export async function createUser(nombre, correo, contrasena, rol = 'usuario') {
   try {
-    const hashedPassword = await bcrypt.hash(contrasena, SALT_ROUNDS); // Encriptar la contraseña
+    // Encriptar la contraseña
+    const hashedPassword = await bcrypt.hash(contrasena, SALT_ROUNDS);
     const newUser = await prisma.usuario.create({
       data: {
-        nombre: nombre,
-        correo: correo,
+        nombre,
+        correo,
         contrasena: hashedPassword,
-        rol: rol,
+        rol,
       },
     });
     console.log('User created successfully:', newUser);
     return newUser;
   } catch (error) {
-    console.error('Error creating user:', error);
+    console.error('Error creating user:', error.message);
     throw error;
   } finally {
     await prisma.$disconnect();
   }
 }
 
+
 // Función para autenticar un usuario
 export async function authenticateUser(correo, contrasena) {
   try {
+    if (!correo || !contrasena) {
+      throw new Error('Campos requeridos faltantes');
+    }
+
     const user = await prisma.usuario.findUnique({
-      where: {
-        correo: correo,
-      },
+      where: { correo },
     });
 
     if (!user) {
@@ -48,7 +52,7 @@ export async function authenticateUser(correo, contrasena) {
     }
 
     const isMatch = await bcrypt.compare(contrasena, user.contrasena);
-    
+
     if (isMatch) {
       console.log('Authentication successful:', user);
       return user;
@@ -57,13 +61,12 @@ export async function authenticateUser(correo, contrasena) {
       return null;
     }
   } catch (error) {
-    console.error('Error authenticating user:', error);
+    console.error('Error authenticating user:', error.message);
     throw error;
   } finally {
     await prisma.$disconnect();
   }
 }
-
 // Configurar el transporte de correo
 const transporter = nodemailer.createTransport({
   service: 'Gmail', // Proveedor de correo (puede ser Gmail, Outlook, etc.)
@@ -72,7 +75,6 @@ const transporter = nodemailer.createTransport({
     pass: process.env.EMAIL_PASS, // La contraseña de tu correo electrónico
   },
 });
-
 
 // Función para generar token de restablecimiento de contraseña
 export async function generatePasswordResetToken(correo) {

@@ -21,12 +21,16 @@ model Usuario {
 }
 
 model Componente {
-  id_componente    Int     @id @default(autoincrement())
+  id_componente    Int     @id @default(autoincrement()) // ID autoincremental
   nombre           String
   categoria        String
   precio           Float
   marca            String
-  especificaciones String?
+  especificaciones Json?
+  url              String
+  lowestPrice      Float
+  averageRating    Float?
+  imagenUrl        String
   Ensamble_Componente Ensamble_Componente[]
   Carritos         Carrito[]
 }
