@@ -5,9 +5,9 @@ import BackendMessage from "@/components/BackendMessage"; // Adjust the path if 
 
 export default function Page() {
   return (
-    <div>
+    <main>
       <h2>Welcome to PCAssembler</h2>
       <BackendMessage />
-    </div>
+    </main>
   );
 }
