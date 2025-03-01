@@ -1,4 +1,6 @@
 import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import '@/app/globals.css'
 
 // src/app/layout.js
 export default function RootLayout({ children }) {
@@ -6,8 +8,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <NavBar/>
-        <h1>PCAssembler</h1>
-        <main>{children}</main>
+        <main className="min-h-screen">{children}</main>
+        <Footer/>
       </body>
     </html>
   );
