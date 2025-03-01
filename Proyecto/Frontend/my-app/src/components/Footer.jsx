@@ -105,7 +105,7 @@ const Footer = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
                 <span className="text-gray-600 dark:text-gray-300 text-sm">
-                  Av. Siempre Viva 123, Springfield
+                  Universidad Nacional de Colombia
                 </span>
               </li>
               <li className="flex items-start">

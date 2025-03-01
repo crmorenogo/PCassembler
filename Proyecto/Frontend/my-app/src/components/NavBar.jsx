@@ -193,7 +193,10 @@ const NavBar = () => {
         <div className="flex justify-between h-16">
           {/* Logo/Brand */}
           <div className="flex-shrink-0 flex items-center">
-            <Link href="/" className={`text-xl font-bold ${
+            <Link 
+              href="/" 
+              onClick={() => setIsOpen(false)}
+              className={`text-xl font-bold ${
               isHome 
                 ? 'text-black dark:text-white'
                 : 'text-gray-900 dark:text-white'
@@ -299,27 +302,36 @@ const NavBar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className={`${isMobileMenuOpen ? 'block' : 'hidden'} md:hidden ${
+        <div className={`md:hidden ${
           isHome 
             ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm'
             : 'bg-white dark:bg-gray-900'
         }`}>
           <div className="px-2 pt-2 pb-3 space-y-1">
-            <Link href="/productos" className={`block px-3 py-2 rounded-md text-base font-medium ${
+            <Link 
+              href="/productos" 
+              onClick={() => setIsOpen(false)}
+              className={`block px-3 py-2 rounded-md text-base font-medium ${
               isHome 
                 ? 'text-black dark:text-white hover:text-gray-700 dark:hover:text-gray-300'
                 : 'text-gray-900 dark:text-white hover:text-gray-700 dark:hover:text-gray-300'
             }`}>
               Productos
             </Link>
-            <Link href="/armar-pc" className={`block px-3 py-2 rounded-md text-base font-medium ${
+            <Link 
+              href="/armar-pc" 
+              onClick={() => setIsOpen(false)}
+              className={`block px-3 py-2 rounded-md text-base font-medium ${
               isHome 
                 ? 'text-black dark:text-white hover:text-gray-700 dark:hover:text-gray-300'
                 : 'text-gray-900 dark:text-white hover:text-gray-700 dark:hover:text-gray-300'
             }`}>
               Armar PC
             </Link>
-            <Link href="/contacto" className={`block px-3 py-2 rounded-md text-base font-medium ${
+            <Link 
+              href="/contacto" 
+              onClick={() => setIsOpen(false)}
+              className={`block px-3 py-2 rounded-md text-base font-medium ${
               isHome 
                 ? 'text-black dark:text-white hover:text-gray-700 dark:hover:text-gray-300'
                 : 'text-gray-900 dark:text-white hover:text-gray-700 dark:hover:text-gray-300'

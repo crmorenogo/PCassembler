@@ -9,38 +9,61 @@ export default function HomePage() {
       title: "PC Gaming",
       description: "Configura tu PC gaming de alto rendimiento con los mejores componentes.",
       image: "/builds/gaming-pc.png",
-      link: "/armar-pc/gaming"
+      link: "/armar-pc?type=gaming"
     },
     {
       title: "PC Workstation",
       description: "Estaciones de trabajo profesionales para diseño y desarrollo.",
       image: "/builds/workstation-pc.png",
-      link: "/armar-pc/workstation"
+      link: "/armar-pc?type=workstation"
     },
     {
       title: "PC Streaming",
       description: "Configuraciones optimizadas para streaming y creación de contenido.",
       image: "/builds/streaming-pc.png",
-      link: "/armar-pc/streaming"
+      link: "/armar-pc?type=streaming"
     },
     {
       title: "PC Básica",
       description: "Computadoras confiables para uso diario y oficina.",
-      image: "/builds/basic-pc.png",
-      link: "/armar-pc/basic"
+      image: "/builds/basica-pc.png",
+      link: "/armar-pc?type=basic"
     }
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-black text-gray-900 dark:text-white">
+      <style jsx global>{`
+        @keyframes float {
+          0% {
+            transform: translateY(calc(50% - 10px));
+          }
+          50% {
+            transform: translateY(calc(50% + 10px));
+          }
+          100% {
+            transform: translateY(calc(50% - 10px));
+          }
+        }
+      `}</style>
+
       {/* Hero Section */}
-      <div className="relative h-screen">
-        {/* Background con efecto de circuitos */}
-        <div className="absolute inset-0 bg-[url('/circuit-pattern.png')] opacity-20"></div>
+      <div className="relative pt-20 md:pt-28 md:h-screen">
+        {/* PC Image Showcase  mobile*/}
+        <div className="flex justify-center items-center md:hidden z-0  w-full h-[70vh]">
+          <Image
+            src="/home.png"
+            alt="Custom PC Build"
+            width={500}
+            height={500}
+            className="w-[400px]"
+            priority
+          />
+        </div>
         
         {/* Contenido del Hero */}
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
-          <div className="flex flex-col justify-center h-full pb-32">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full z-10">
+          <div className="flex flex-col justify-center h-full">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 dark:from-blue-400 dark:via-purple-500 dark:to-pink-500">
               BUILD YOUR PC
             </h1>
@@ -65,16 +88,15 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* PC Image Showcase */}
-        <div className="absolute right-0 bottom-0 w-full md:w-1/2 h-[500px]">
+        {/* PC Image Showcase  web*/}
+        <div className="relative hidden md:block z-0 right-0 bottom-1/2 w-full md:w-1/2 h-[500px] animate-[float_5s_ease-in-out_infinite] md:absolute">
           <Image
-            src="/builds/gaming-pc.png"
+            src="/home.png"
             alt="Custom PC Build"
             fill
             className="object-contain"
             priority
           />
-          {/* Efecto de resplandor */}
         </div>
       </div>
 
