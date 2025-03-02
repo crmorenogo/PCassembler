@@ -3,8 +3,9 @@ import { createUser, authenticateUser } from '../services/userService.js';
 
 // Función para manejar la creación de usuarios
 export async function createUserHandler(req, res) {
-  const { nombre, correo, contrasena, rol } = req.body;
-
+  const { nombre, correo, contrasena } = req.body;
+  console.log(nombre, correo, contrasena)
+  let rol = 'usuario';
   // Verificar que todos los campos requeridos están presentes
   if (!nombre || !correo || !contrasena || !rol) {
     return res.status(400).json({ error: 'Campos requeridos faltantes' });

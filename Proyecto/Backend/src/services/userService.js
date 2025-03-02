@@ -37,6 +37,7 @@ export async function createUser(nombre, correo, contrasena, rol = 'usuario') {
 
 // Función para autenticar un usuario
 export async function authenticateUser(correo, contrasena) {
+  console.log('Authenticating user:', correo, contrasena);
   try {
     if (!correo || !contrasena) {
       throw new Error('Campos requeridos faltantes');

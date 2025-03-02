@@ -9,7 +9,13 @@ const app = express();
 const port = process.env.PORT || 3001;
 
 app.use(bodyParser.json());
-app.use(cors());
+
+app.use(cors({
+  origin: 'http://localhost:3000', // Permitir solo el frontend
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Métodos HTTP permitidos
+  allowedHeaders: ['Content-Type', 'Authorization'] // Encabezados permitidos
+}));
+
 
 app.get('/api/test', (req, res) => {
   console.log("API called /api/test");
