@@ -5,8 +5,8 @@ import { useRouter } from 'next/navigation';
 const LoginPage = () => {
   const router = useRouter();
   const [formData, setFormData] = useState({
-    email: '',
-    password: '',
+    correo: '',
+    contrasena: '',
   });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -25,7 +25,7 @@ const LoginPage = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('http://localhost:3001/api/auth/login', {
+      const response = await fetch('http://localhost:3001/api/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -39,7 +39,7 @@ const LoginPage = () => {
         localStorage.setItem('token-pcassembler', data.token);
         router.push('/'); // Redirige al inicio después del login exitoso
       } else {
-        setError(data.message || 'Error al iniciar sesión');
+        setError(data.error || 'Error al iniciar sesión');
       }
     } catch (err) {
       setError('Error al conectar con el servidor');
@@ -65,32 +65,32 @@ const LoginPage = () => {
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <div className="rounded-md shadow-sm -space-y-px">
             <div>
-              <label htmlFor="email" className="sr-only">
+              <label htmlFor="correo" className="sr-only">
                 Correo electrónico
               </label>
               <input
-                id="email"
-                name="email"
+                id="correo"
+                name="correo"
                 type="email"
                 autoComplete="email"
                 required
-                value={formData.email}
+                value={formData.correo}
                 onChange={handleChange}
                 className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                 placeholder="Correo electrónico"
               />
             </div>
             <div>
-              <label htmlFor="password" className="sr-only">
+              <label htmlFor="contrasena" className="sr-only">
                 Contraseña
               </label>
               <input
-                id="password"
-                name="password"
+                id="contrasena"
+                name="contrasena"
                 type="password"
                 autoComplete="current-password"
                 required
-                value={formData.password}
+                value={formData.contrasena}
                 onChange={handleChange}
                 className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                 placeholder="Contraseña"

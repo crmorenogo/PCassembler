@@ -5,8 +5,9 @@ import { useRouter } from 'next/navigation';
 const RegisterPage = () => {
   const router = useRouter();
   const [formData, setFormData] = useState({
-    email: '',
-    password: '',
+    nombre: '',
+    correo: '',
+    contrasena: '',
     confirmPassword: ''
   });
   const [error, setError] = useState('');
@@ -23,17 +24,17 @@ const RegisterPage = () => {
   };
 
   const validateForm = () => {
-    if (!formData.email || !formData.password || !formData.confirmPassword) {
+    if (!formData.nombre || !formData.correo || !formData.contrasena || !formData.confirmPassword) {
       setError('Todos los campos son obligatorios');
       return false;
     }
 
-    if (formData.password.length < 6) {
+    if (formData.contrasena.length < 6) {
       setError('La contraseña debe tener al menos 6 caracteres');
       return false;
     }
 
-    if (formData.password !== formData.confirmPassword) {
+    if (formData.contrasena !== formData.confirmPassword) {
       setError('Las contraseñas no coinciden');
       return false;
     }
@@ -50,14 +51,15 @@ const RegisterPage = () => {
     setError('');
 
     try {
-      const response = await fetch('http://localhost:3001/api/auth/register', {
+      const response = await fetch('http://localhost:3001/api/users', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          email: formData.email,
-          password: formData.password
+          nombre: formData.nombre,
+          correo: formData.correo,
+          contrasena: formData.contrasena
         }),
       });
 
@@ -94,32 +96,47 @@ const RegisterPage = () => {
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <div className="rounded-md shadow-sm space-y-4">
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              <label htmlFor="nombre" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                Nombre completo
+              </label>
+              <input
+                id="nombre"
+                name="nombre"
+                type="text"
+                autoComplete="name"
+                required
+                value={formData.nombre}
+                onChange={handleChange}
+                className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+                placeholder="Tu nombre completo"
+              />
+            </div>
+            <div>
+              <label htmlFor="correo" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                 Correo electrónico
               </label>
               <input
-                id="email"
-                name="email"
+                id="correo"
+                name="correo"
                 type="email"
                 autoComplete="email"
                 required
-                value={formData.email}
+                value={formData.correo}
                 onChange={handleChange}
                 className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                 placeholder="tu@ejemplo.com"
               />
             </div>
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              <label htmlFor="contrasena" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                 Contraseña
               </label>
               <input
-                id="password"
-                name="password"
+                id="contrasena"
+                name="contrasena"
                 type="password"
-                autoComplete="new-password"
                 required
-                value={formData.password}
+                value={formData.contrasena}
                 onChange={handleChange}
                 className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                 placeholder="Contraseña"
