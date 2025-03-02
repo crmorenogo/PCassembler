@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 import request from 'supertest';
 import express from 'express';
-import { getCPUsCompatibles } from '../src/controllers/ensambleController.js';
+import { getCPUsCompatibles } from '../src/controllers/assemblerController.js';
 import { PrismaClient } from '@prisma/client';
 import { describe, it, expect, beforeAll, afterAll, afterEach } from '@jest/globals';
 
