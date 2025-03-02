@@ -1,0 +1,549 @@
+[
+  {
+    "id": "hDD111",
+    "name": "Western Digital Blue 4TB 3.5\" HDD",
+    "category": "Storage",
+    "url": "https://pcpartpicker.com/product/hDD111/wd-blue-4tb-hdd",
+    "prices": {
+      "lowestPrice": 89,
+      "prices": [
+        {
+          "merchant": "amazon",
+          "availability": "In stock",
+          "price": 89,
+          "currency": "$",
+          "buyLink": "https://www.amazon.com/dp/hDD111"
+        }
+      ]
+    },
+    "ratings": {
+      "averageRating": 4.5,
+      "numberOfRatings": 5400,
+      "percentages": {
+        "5*": "70%",
+        "4*": "20%",
+        "3*": "7%",
+        "2*": "2%",
+        "1*": "1%"
+      }
+    },
+    "specifications": {
+      "Manufacturer": "Western Digital",
+      "Part #": "WD40EZAZ",
+      "Type": "HDD",
+      "Capacity": "4 TB",
+      "Interface": "SATA 6 Gb/s",
+      "Form Factor": "3.5\"",
+      "Cache": "256 MB",
+      "RPM": "5400 RPM",
+      "Warranty": "2 years"
+    },
+    "image": "STORAGE_images/hDD111.jpg"
+  },
+  {
+    "id": "sATA222",
+    "name": "Kingston A400 960GB SATA SSD",
+    "category": "Storage",
+    "url": "https://pcpartpicker.com/product/sATA222/kingston-a400-960gb-sata-ssd",
+    "prices": {
+      "lowestPrice": 59,
+      "prices": [
+        {
+          "merchant": "newegg",
+          "availability": "In stock",
+          "price": 59,
+          "currency": "$",
+          "buyLink": "https://www.newegg.com/product/sATA222"
+        }
+      ]
+    },
+    "ratings": {
+      "averageRating": 4.6,
+      "numberOfRatings": 3900,
+      "percentages": {
+        "5*": "75%",
+        "4*": "18%",
+        "3*": "5%",
+        "2*": "1%",
+        "1*": "1%"
+      }
+    },
+    "specifications": {
+      "Manufacturer": "Kingston",
+      "Part #": "SA400S37/960G",
+      "Type": "SATA SSD",
+      "Capacity": "960 GB",
+      "Interface": "SATA 6 Gb/s",
+      "Form Factor": "2.5\"",
+      "Read Speed": "500 MB/s",
+      "Write Speed": "450 MB/s",
+      "TBW": "300 TB",
+      "Warranty": "3 years"
+    },
+    "image": "STORAGE_images/sATA222.jpg"
+  },
+  {
+    "id": "m2SSD333",
+    "name": "SK Hynix Gold P31 1TB NVMe SSD",
+    "category": "Storage",
+    "url": "https://pcpartpicker.com/product/m2SSD333/sk-hynix-gold-p31-1tb-nvme-ssd",
+    "prices": {
+      "lowestPrice": 89,
+      "prices": [
+        {
+          "merchant": "bestbuy",
+          "availability": "In stock",
+          "price": 89,
+          "currency": "$",
+          "buyLink": "https://www.bestbuy.com/product/m2SSD333"
+        }
+      ]
+    },
+    "ratings": {
+      "averageRating": 4.8,
+      "numberOfRatings": 2500,
+      "percentages": {
+        "5*": "85%",
+        "4*": "10%",
+        "3*": "3%",
+        "2*": "1%",
+        "1*": "1%"
+      }
+    },
+    "specifications": {
+      "Manufacturer": "SK Hynix",
+      "Part #": "SHGP31-1000GM-2",
+      "Type": "NVMe SSD",
+      "Capacity": "1 TB",
+      "Interface": "PCIe 3.0 x4",
+      "Form Factor": "M.2 2280",
+      "Read Speed": "3500 MB/s",
+      "Write Speed": "3200 MB/s",
+      "TBW": "600 TB",
+      "Warranty": "5 years"
+    },
+    "image": "STORAGE_images/m2SSD333.jpg"
+  },
+  {
+    "id": "hDD444",
+    "name": "Toshiba X300 6TB 3.5\" HDD",
+    "category": "Storage",
+    "url": "https://pcpartpicker.com/product/hDD444/toshiba-x300-6tb-hdd",
+    "prices": {
+      "lowestPrice": 129,
+      "prices": [
+        {
+          "merchant": "newegg",
+          "availability": "In stock",
+          "price": 129,
+          "currency": "$",
+          "buyLink": "https://www.newegg.com/product/hDD444"
+        }
+      ]
+    },
+    "ratings": {
+      "averageRating": 4.7,
+      "numberOfRatings": 1900,
+      "percentages": {
+        "5*": "78%",
+        "4*": "15%",
+        "3*": "5%",
+        "2*": "1%",
+        "1*": "1%"
+      }
+    },
+    "specifications": {
+      "Manufacturer": "Toshiba",
+      "Part #": "HDWE160XZSTA",
+      "Type": "HDD",
+      "Capacity": "6 TB",
+      "Interface": "SATA 6 Gb/s",
+      "Form Factor": "3.5\"",
+      "Cache": "256 MB",
+      "RPM": "7200 RPM",
+      "Warranty": "3 years"
+    },
+    "image": "STORAGE_images/hDD444.jpg"
+  },
+  {
+    "id": "sATA456",
+    "name": "Crucial MX500 1TB 2.5\" SATA SSD",
+    "category": "Storage",
+    "url": "https://pcpartpicker.com/product/sATA456/crucial-mx500-1tb-sata-ssd",
+    "prices": {
+      "lowestPrice": 75,
+      "prices": [
+        {
+          "merchant": "newegg",
+          "availability": "In stock",
+          "price": 75,
+          "currency": "$",
+          "buyLink": "https://www.newegg.com/product/sATA456"
+        }
+      ]
+    },
+    "ratings": {
+      "averageRating": 4.7,
+      "numberOfRatings": 1200,
+      "percentages": {
+        "5*": "80%",
+        "4*": "15%",
+        "3*": "3%",
+        "2*": "1%",
+        "1*": "1%"
+      }
+    },
+    "specifications": {
+      "Manufacturer": "Crucial",
+      "Part #": "CT1000MX500SSD1",
+      "Series": "MX500",
+      "Type": "SATA SSD",
+      "Capacity": "1 TB",
+      "Interface": "SATA 6 Gb/s",
+      "Form Factor": "2.5\"",
+      "Read Speed": "560 MB/s",
+      "Write Speed": "510 MB/s",
+      "TBW": "360 TB",
+      "Warranty": "5 years"
+    },
+    "image": "STORAGE_images/sATA456.jpg"
+  },
+  {
+    "id": "m2NVMe789",
+    "name": "WD Black SN850X 2TB NVMe SSD",
+    "category": "Storage",
+    "url": "https://pcpartpicker.com/product/m2NVMe789/wd-black-sn850x-2tb-nvme-ssd",
+    "prices": {
+      "lowestPrice": 199,
+      "prices": [
+        {
+          "merchant": "bestbuy",
+          "availability": "In stock",
+          "price": 199,
+          "currency": "$",
+          "buyLink": "https://www.bestbuy.com/product/m2NVMe789"
+        }
+      ]
+    },
+    "ratings": {
+      "averageRating": 4.9,
+      "numberOfRatings": 2500,
+      "percentages": {
+        "5*": "90%",
+        "4*": "8%",
+        "3*": "1%",
+        "2*": "0.5%",
+        "1*": "0.5%"
+      }
+    },
+    "specifications": {
+      "Manufacturer": "Western Digital",
+      "Part #": "WDS200T2X0E",
+      "Series": "Black SN850X",
+      "Type": "NVMe SSD",
+      "Capacity": "2 TB",
+      "Interface": "PCIe 4.0 x4",
+      "Form Factor": "M.2 2280",
+      "Read Speed": "7300 MB/s",
+      "Write Speed": "6600 MB/s",
+      "TBW": "1200 TB",
+      "Warranty": "5 years"
+    },
+    "image": "STORAGE_images/m2NVMe789.jpg"
+  },
+  {
+    "id": "sSD123",
+    "name": "Samsung 970 EVO Plus 1TB NVMe SSD",
+    "category": "Storage",
+    "url": "https://pcpartpicker.com/product/sSD123/samsung-970-evo-plus-1tb-nvme-ssd",
+    "prices": {
+      "lowestPrice": 99,
+      "prices": [
+        {
+          "merchant": "amazon",
+          "availability": "In stock",
+          "price": 99,
+          "currency": "$",
+          "buyLink": "https://www.amazon.com/dp/B07MFZXR1B"
+        }
+      ]
+    },
+    "ratings": {
+      "averageRating": 4.8,
+      "numberOfRatings": 1500,
+      "percentages": {
+        "5*": "85%",
+        "4*": "12%",
+        "3*": "2%",
+        "2*": "1%",
+        "1*": "0%"
+      }
+    },
+    "specifications": {
+      "Manufacturer": "Samsung",
+      "Part #": "MZ-V7S1T0B/AM",
+      "Series": "970 EVO Plus",
+      "Type": "NVMe SSD",
+      "Capacity": "1 TB",
+      "Interface": "PCIe 3.0 x4",
+      "Form Factor": "M.2 2280",
+      "Read Speed": "3500 MB/s",
+      "Write Speed": "3300 MB/s",
+      "TBW": "600 TB",
+      "Warranty": "5 years"
+    },
+    "image": "STORAGE_images/sSD123.jpg"
+  },
+  {
+    "id": "sATA999",
+    "name": "Samsung 870 EVO SATA III SSD 1TB",
+    "category": "Storage",
+    "url": "https://www.amazon.com/ssd/s?k=ssd",
+    "prices": {
+      "lowestPrice": 89.99,
+      "prices": [
+        {
+          "merchant": "amazon",
+          "availability": "In stock",
+          "price": 89.99,
+          "currency": "$",
+          "buyLink": "https://www.amazon.com/ssd/s?k=ssd"
+        }
+      ]
+    },
+    "ratings": {
+      "averageRating": 4.8,
+      "numberOfRatings": 42001,
+      "percentages": {
+        "5*": "80%",
+        "4*": "15%",
+        "3*": "3%",
+        "2*": "1%",
+        "1*": "1%"
+      }
+    },
+    "specifications": {
+      "Manufacturer": "Samsung",
+      "Part #": "MZ-77E1T0B/AM",
+      "Type": "SATA SSD",
+      "Capacity": "1 TB",
+      "Interface": "SATA III",
+      "Form Factor": "2.5\"",
+      "Read Speed": "560 MB/s",
+      "Write Speed": "530 MB/s",
+      "TBW": "600 TB",
+      "Warranty": "5 years"
+    },
+    "image": "STORAGE_images/sATA999.jpg"
+  },
+  {
+    "id": "sATA888",
+    "name": "PNY CS900 500GB 3D NAND 2.5\" SATA III SSD",
+    "category": "Storage",
+    "url": "https://www.amazon.com/ssd/s?k=ssd",
+    "prices": {
+      "lowestPrice": 27.99,
+      "prices": [
+        {
+          "merchant": "amazon",
+          "availability": "In stock",
+          "price": 27.99,
+          "currency": "$",
+          "buyLink": "https://www.amazon.com/ssd/s?k=ssd"
+        }
+      ]
+    },
+    "ratings": {
+      "averageRating": 4.7,
+      "numberOfRatings": 22380,
+      "percentages": {
+        "5*": "75%",
+        "4*": "18%",
+        "3*": "5%",
+        "2*": "1%",
+        "1*": "1%"
+      }
+    },
+    "specifications": {
+      "Manufacturer": "PNY",
+      "Part #": "SSD7CS900-500-RB",
+      "Type": "SATA SSD",
+      "Capacity": "500 GB",
+      "Interface": "SATA III",
+      "Form Factor": "2.5\"",
+      "Read Speed": "550 MB/s",
+      "Write Speed": "500 MB/s",
+      "TBW": "300 TB",
+      "Warranty": "3 years"
+    },
+    "image": "STORAGE_images/sATA888.jpg"
+  },
+  {
+    "id": "sATA777",
+    "name": "Crucial BX500 1TB 3D NAND SATA 2.5-Inch SSD",
+    "category": "Storage",
+    "url": "https://www.amazon.com/ssd/s?k=ssd",
+    "prices": {
+      "lowestPrice": 58.0,
+      "prices": [
+        {
+          "merchant": "amazon",
+          "availability": "In stock",
+          "price": 58.0,
+          "currency": "$",
+          "buyLink": "https://www.amazon.com/ssd/s?k=ssd"
+        }
+      ]
+    },
+    "ratings": {
+      "averageRating": 4.6,
+      "numberOfRatings": 124137,
+      "percentages": {
+        "5*": "70%",
+        "4*": "20%",
+        "3*": "7%",
+        "2*": "2%",
+        "1*": "1%"
+      }
+    },
+    "specifications": {
+      "Manufacturer": "Crucial",
+      "Part #": "CT1000BX500SSD1",
+      "Type": "SATA SSD",
+      "Capacity": "1 TB",
+      "Interface": "SATA III",
+      "Form Factor": "2.5\"",
+      "Read Speed": "540 MB/s",
+      "Write Speed": "500 MB/s",
+      "TBW": "360 TB",
+      "Warranty": "3 years"
+    },
+    "image": "STORAGE_images/sATA777.jpg"
+  },
+  {
+    "id": "m2NVMe555",
+    "name": "Samsung 990 PRO SSD NVMe M.2 PCIe Gen4 1TB",
+    "category": "Storage",
+    "url": "https://www.amazon.com/NVMe-SSD/s?k=NVMe+SSD",
+    "prices": {
+      "lowestPrice": 167.99,
+      "prices": [
+        {
+          "merchant": "amazon",
+          "availability": "In stock",
+          "price": 167.99,
+          "currency": "$",
+          "buyLink": "https://www.amazon.com/NVMe-SSD/s?k=NVMe+SSD"
+        }
+      ]
+    },
+    "ratings": {
+      "averageRating": 4.9,
+      "numberOfRatings": 11368,
+      "percentages": {
+        "5*": "85%",
+        "4*": "10%",
+        "3*": "3%",
+        "2*": "1%",
+        "1*": "1%"
+      }
+    },
+    "specifications": {
+      "Manufacturer": "Samsung",
+      "Part #": "MZ-V9P1T0B/AM",
+      "Type": "NVMe SSD",
+      "Capacity": "1 TB",
+      "Interface": "PCIe Gen4",
+      "Form Factor": "M.2 2280",
+      "Read Speed": "7450 MB/s",
+      "Write Speed": "6900 MB/s",
+      "TBW": "1200 TB",
+      "Warranty": "5 years"
+    },
+    "image": "STORAGE_images/m2NVMe555.jpg"
+  },
+  {
+    "id": "m2NVMe444",
+    "name": "WD_BLACK 2TB SN850X NVMe SSD",
+    "category": "Storage",
+    "url": "https://www.amazon.com/NVMe-SSD/s?k=NVMe+SSD",
+    "prices": {
+      "lowestPrice": 147.0,
+      "prices": [
+        {
+          "merchant": "amazon",
+          "availability": "In stock",
+          "price": 147.0,
+          "currency": "$",
+          "buyLink": "https://www.amazon.com/NVMe-SSD/s?k=NVMe+SSD"
+        }
+      ]
+    },
+    "ratings": {
+      "averageRating": 4.8,
+      "numberOfRatings": 24542,
+      "percentages": {
+        "5*": "80%",
+        "4*": "15%",
+        "3*": "3%",
+        "2*": "1%",
+        "1*": "1%"
+      }
+    },
+    "specifications": {
+      "Manufacturer": "Western Digital",
+      "Part #": "WDS200T1X0E",
+      "Type": "NVMe SSD",
+      "Capacity": "2 TB",
+      "Interface": "PCIe Gen4",
+      "Form Factor": "M.2 2280",
+      "Read Speed": "7300 MB/s",
+      "Write Speed": "6600 MB/s",
+      "TBW": "1200 TB",
+      "Warranty": "5 years"
+    },
+    "image": "STORAGE_images/m2NVMe444.jpg"
+  },
+  {
+    "id": "m2NVMe333",
+    "name": "Crucial P3 1TB PCIe Gen3 NVMe M.2 SSD",
+    "category": "Storage",
+    "url": "https://www.amazon.com/NVMe-SSD/s?k=NVMe+SSD",
+    "prices": {
+      "lowestPrice": 59.24,
+      "prices": [
+        {
+          "merchant": "amazon",
+          "availability": "In stock",
+          "price": 59.24,
+          "currency": "$",
+          "buyLink": "https://www.amazon.com/NVMe-SSD/s?k=NVMe+SSD"
+        }
+      ]
+    },
+    "ratings": {
+      "averageRating": 4.7,
+      "numberOfRatings": 27579,
+      "percentages": {
+        "5*": "70%",
+        "4*": "20%",
+        "3*": "7%",
+        "2*": "2%",
+        "1*": "1%"
+      }
+    },
+    "specifications": {
+      "Manufacturer": "Crucial",
+      "Part #": "CT1000P3SSD8",
+      "Type": "NVMe SSD",
+      "Capacity": "1 TB",
+      "Interface": "PCIe Gen3",
+      "Form Factor": "M.2 2280",
+      "Read Speed": "3500 MB/s",
+      "Write Speed": "3200 MB/s",
+      "TBW": "600 TB",
+      "Warranty": "5 years"
+    },
+    "image": "STORAGE_images/m2NVMe333.jpg"
+  }
+]

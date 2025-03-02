@@ -10,9 +10,12 @@ const scripts = [
   "insertCPU.js",
   "insertGPU.js",
   "insertRAM.js",
-  "insertMOTHERBOARD.js",
-  "insertPOWER.js",
-  "insertCASE.js"
+  "insertMotherboard.js",
+  "insertPower.js",
+  "insertCase.js",
+  "insertCompatibility.js",
+  "insertStorage.js",
+  "insertMonitor.js",
 ].map(script => resolve(__dirname, script));
 
 // Ejecutar todos los scripts en paralelo
