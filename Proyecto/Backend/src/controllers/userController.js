@@ -34,7 +34,11 @@ export async function authenticateUserHandler(req, res) {
       // Devolver usuario y token en la respuesta
       res.status(200).json({
         message: 'Authentication successful',
+        correo: authResult.correo,
+        nombre: authResult.nombre,
+        rol: authResult.rol,
         token: authResult.token
+
       });
     } else {
       res.status(401).json({ error: 'Authentication failed' });
