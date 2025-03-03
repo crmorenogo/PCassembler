@@ -6,6 +6,7 @@ import AuthRoute from '@/components/AuthRoute';
 
 const RegisterPage = () => {
   const router = useRouter();
+  const { login } = useAuth();
   const [formData, setFormData] = useState({
     nombre: '',
     correo: '',
@@ -69,12 +70,13 @@ const RegisterPage = () => {
 
       if (response.ok) {
         // Guardar el token y redirigir
-        localStorage.setItem('token-pcassembler', data.token);
-        router.push('/');
+        await login(data.token);
+        router.push('/perfil');
       } else {
         setError(data.message || 'Error al registrar usuario');
       }
     } catch (err) {
+      console.error('Error durante el registro:', err);
       setError('Error al conectar con el servidor');
     } finally {
       setLoading(false);

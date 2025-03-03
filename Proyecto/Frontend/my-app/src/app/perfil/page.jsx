@@ -61,11 +61,6 @@ const ConfigurationCard = ({ config, index }) => (
   </div>
 );
 
-const mockUserData = {
-  nombre: "Juan Pérez",
-  correo: "juan@example.com"
-};
-
 const mockConfigurations = [
   {
     id: 1,
@@ -126,8 +121,7 @@ const mockConfigurations = [
 ];
 
 const ProfilePage = () => {
-  const { token } = useAuth();
-  const [userData] = useState(mockUserData);
+  const { user } = useAuth();
   const [configurations] = useState(mockConfigurations);
   const [loading, setLoading] = useState(true);
   const [error] = useState('');
@@ -160,7 +154,7 @@ const ProfilePage = () => {
           {/* Información del Usuario */}
           <div className="lg:col-span-1">
             <ProfileCard title="Información Personal">
-              {userData && (
+              {user && (
                 <div className="space-y-6">
                   <div className="flex items-center space-x-4">
                     <div className="bg-blue-100 dark:bg-blue-900/30 rounded-full p-3">
@@ -170,7 +164,7 @@ const ProfilePage = () => {
                     </div>
                     <div>
                       <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Nombre</p>
-                      <p className="text-lg font-semibold text-gray-900 dark:text-white">{userData.nombre}</p>
+                      <p className="text-lg font-semibold text-gray-900 dark:text-white">{user.nombre}</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-4">
@@ -179,9 +173,9 @@ const ProfilePage = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
                     </div>
-                    <div>
+                    <div className="min-w-0 flex-1">
                       <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Correo</p>
-                      <p className="text-lg font-semibold text-gray-900 dark:text-white">{userData.correo}</p>
+                      <p className="text-lg font-semibold text-gray-900 dark:text-white break-words">{user.correo}</p>
                     </div>
                   </div>
                 </div>
