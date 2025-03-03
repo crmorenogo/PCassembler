@@ -1,6 +1,8 @@
 "use client";
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { useAuth } from '@/context/AuthContext';
+import AuthRoute from '@/components/AuthRoute';
 
 const RegisterPage = () => {
   const router = useRouter();
@@ -202,4 +204,12 @@ const RegisterPage = () => {
   );
 };
 
-export default RegisterPage; 
+const RegisterWithAuth = () => {
+  return (
+    <AuthRoute>
+      <RegisterPage />
+    </AuthRoute>
+  );
+};
+
+export default RegisterWithAuth; 

@@ -1,15 +1,16 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { useAuth } from '@/context/AuthContext';
 
 const NavBar = () => {
   const pathname = usePathname();
+  const router = useRouter();
+  const { token, logout } = useAuth();
   const isHome = pathname === '/';
   const [isOpen, setIsOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [user, setUser] = useState(null);
   const [mounted, setMounted] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -71,46 +72,13 @@ const NavBar = () => {
       }
     }
     updateRootColors(storedTheme === null ? true : storedTheme === 'true');
-
-    // Verificar si hay un token de sesión
-    const token = localStorage.getItem('token-pcassembler');
-    if (token) {
-      checkAuthStatus(token);
-    }
-    
     setMounted(true);
   }, []);
 
-  // Función para verificar el estado de autenticación
-  const checkAuthStatus = async (token) => {
-    try {
-      const response = await fetch('http://localhost:3001/api/auth/verify', {
-        method: 'GET',
-        headers: {
-          'Authorization': `Bearer ${token}`
-        }
-      });
-      
-      if (response.ok) {
-        const data = await response.json();
-        setIsAuthenticated(true);
-        setUser(data.user);
-      } else {
-        handleLogout();
-      }
-    } catch (error) {
-      console.error('Error verificando autenticación:', error);
-      handleLogout();
-    }
-  };
-
   // Función para cerrar sesión
   const handleLogout = () => {
-    if (typeof window === 'undefined') return;
-    localStorage.removeItem('token');
-    setIsAuthenticated(false);
-    setUser(null);
-    window.location.href = '/';
+    logout();
+    router.push('/login');
   };
 
   // Manejar el cambio de tema
@@ -128,12 +96,19 @@ const NavBar = () => {
   const AuthButtons = () => {
     if (!mounted) return null;
 
-    if (isAuthenticated) {
+    if (token) {
       return (
         <div className="flex items-center space-x-4">
-          <span className={`text-sm font-medium ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-            {user?.email}
-          </span>
+          <Link
+            href="/perfil"
+            className={`px-3 py-2 rounded-md text-sm font-medium ${
+              isHome 
+                ? 'text-black dark:text-white hover:text-gray-700 dark:hover:text-gray-300'
+                : 'text-gray-900 dark:text-white hover:text-gray-700 dark:hover:text-gray-300'
+            }`}
+          >
+            Mi Perfil
+          </Link>
           <button
             onClick={handleLogout}
             className={`${

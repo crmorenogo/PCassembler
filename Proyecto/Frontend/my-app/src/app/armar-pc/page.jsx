@@ -760,7 +760,7 @@ const ArmarPcPage = () => {
                         <div className="flex gap-4">
                           <div className="w-32 h-32 flex-shrink-0 relative">
                             <Image
-                              src={getImageUrl(gpu.imagen_url)}
+                              src={getImageUrl(gpu.imagenUrl)}
                               alt={gpu.nombre}
                               width={128}
                               height={128}
@@ -820,7 +820,7 @@ const ArmarPcPage = () => {
                         <div className="flex gap-4">
                           <div className="w-32 h-32 flex-shrink-0 relative">
                             <Image
-                              src={getImageUrl(memoryItem.imagen_url)}
+                              src={getImageUrl(memoryItem.imagenUrl)}
                               alt={memoryItem.nombre}
                               width={128}
                               height={128}
@@ -880,7 +880,7 @@ const ArmarPcPage = () => {
                         <div className="flex gap-4">
                           <div className="w-32 h-32 flex-shrink-0 relative">
                             <Image
-                              src={getImageUrl(disk.imagen_url)}
+                              src={getImageUrl(disk.imagenUrl)}
                               alt={disk.nombre}
                               width={128}
                               height={128}
@@ -940,7 +940,7 @@ const ArmarPcPage = () => {
                         <div className="flex gap-4">
                           <div className="w-32 h-32 flex-shrink-0 relative">
                             <Image
-                              src={getImageUrl(psu.imagen_url)}
+                              src={getImageUrl(psu.imagenUrl)}
                               alt={psu.nombre}
                               width={128}
                               height={128}
@@ -1000,7 +1000,7 @@ const ArmarPcPage = () => {
                         <div className="flex gap-4">
                           <div className="w-32 h-32 flex-shrink-0 relative">
                             <Image
-                              src={getImageUrl(case_.imagen_url)}
+                              src={getImageUrl(case_.imagenUrl)}
                               alt={case_.nombre}
                               width={128}
                               height={128}

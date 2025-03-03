@@ -1,9 +1,12 @@
 "use client";
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { useAuth } from '@/context/AuthContext';
+import AuthRoute from '@/components/AuthRoute';
 
 const LoginPage = () => {
   const router = useRouter();
+  const { login } = useAuth();
   const [formData, setFormData] = useState({
     correo: '',
     contrasena: '',
@@ -36,8 +39,8 @@ const LoginPage = () => {
       const data = await response.json();
 
       if (response.ok) {
-        localStorage.setItem('token-pcassembler', data.token);
-        router.push('/'); // Redirige al inicio después del login exitoso
+        login(data.token);
+        router.push('/perfil');
       } else {
         setError(data.error || 'Error al iniciar sesión');
       }
@@ -149,4 +152,12 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage; 
+const LoginWithAuth = () => {
+  return (
+    <AuthRoute>
+      <LoginPage />
+    </AuthRoute>
+  );
+};
+
+export default LoginWithAuth; 
