@@ -111,7 +111,7 @@ export const getCPUsCompatibles = async (req, res) => {
 
     const chipsetsArray = chipsetsCompatibles.map((c) => c.chipset);
 
-    console.log("Chipsets Array:", chipsetsArray);
+    // console.log("Chipsets Array:", chipsetsArray);
 
     // Buscar CPUs compatibles usando el socket
     const cpusCompatibles = await prisma.componente.findMany({
@@ -131,17 +131,17 @@ export const getCPUsCompatibles = async (req, res) => {
       },
     });
 
-    console.log("CPUs Compatibles antes del filtrado:", cpusCompatibles);
+    // console.log("CPUs Compatibles antes del filtrado:", cpusCompatibles);
 
     // Filtrar CPUs compatibles basadas en la tabla de compatibilidad (socket y chipset)
     const cpusCompatiblesConChipset = cpusCompatibles.filter(() => {
       return chipsetsArray.includes(chipset);
     });
 
-    console.log(
-      "CPUs Compatibles después del filtrado:",
-      cpusCompatiblesConChipset
-    );
+    // console.log(
+    //   "CPUs Compatibles después del filtrado:",
+    //   cpusCompatiblesConChipset
+    // );
 
     res.json({ cpusCompatibles: cpusCompatiblesConChipset });
   } catch (error) {
