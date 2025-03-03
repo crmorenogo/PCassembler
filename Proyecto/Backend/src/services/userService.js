@@ -54,8 +54,17 @@ export async function authenticateUser(correo, contrasena) {
     const isMatch = await bcrypt.compare(contrasena, user.contrasena);
 
     if (isMatch) {
+      // Generar el token JWT con el ID y rol del usuario
+      const token = jwt.sign(
+        { id: user.id, correo: user.correo, rol: user.rol },
+        JWT_SECRET,
+        { expiresIn: '2h' } // El token expira en 2 horas
+      );
+
       console.log('Authentication successful:', user);
-      return user;
+
+      // Retornar el usuario junto con el token
+      return { user, token };
     } else {
       console.error('Password does not match');
       return null;
@@ -67,6 +76,7 @@ export async function authenticateUser(correo, contrasena) {
     await prisma.$disconnect();
   }
 }
+
 // Configurar el transporte de correo
 const transporter = nodemailer.createTransport({
   service: 'Gmail', // Proveedor de correo (puede ser Gmail, Outlook, etc.)
