@@ -18,7 +18,7 @@ export const registrarEnsamble = async (req, res) => {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     console.log("Datos decodificados del token:", decoded); // 🔍 Verifica el contenido del token
 
-    const userId = decoded.id_usuario;
+    const userId = decoded.id;
     console.log("ID de usuario extraído:", userId); // 🔍 Verifica que el ID de usuario no sea undefined
 
     if (!userId) {
@@ -77,3 +77,88 @@ export const registrarEnsamble = async (req, res) => {
   }
 };
 
+
+
+
+//Obtener ensambles del usuario
+
+
+export async function obtenerEnsamblesUsuario(req, res) {
+  try {
+    // Obtener el token del header
+    const token = req.headers.authorization?.split(" ")[1];
+
+    if (!token) {
+      return res.status(401).json({ error: "Token no proporcionado" });
+    }
+
+    // Verificar el token
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+
+    if (!decoded || !decoded.id) {
+      return res.status(401).json({ error: "Token inválido" });
+    }
+
+    // Buscar los ensambles del usuario y cargar solo los nombres de los componentes y sus precios
+    const ensambles = await prisma.ensamble.findMany({
+      where: { id_usuario: decoded.id },
+      include: {
+        Ensamble_Componente: {
+          include: {
+            Componente: {
+              select: {
+                nombre: true,
+                categoria: true,
+                precio: true,
+              },
+            },
+          },
+        },
+      },
+    });
+
+    // Definir el orden de categorías deseado
+    const ordenCategorias = [
+      "Motherboard",
+      "CPU",
+      "Video Card",
+      "Memory",
+      "Storage",
+      "Power Supply",
+      "Case",
+      "Monitor",
+    ];
+
+    // Formatear la respuesta organizando los componentes por categoría
+    const ensamblesOrganizados = ensambles.map((ensamble) => {
+      const componentesOrdenados = {};
+      let costoTotal = 0;
+
+      // Inicializar las categorías en el objeto de salida
+      ordenCategorias.forEach((categoria) => {
+        componentesOrdenados[categoria] = null;
+      });
+
+      // Asignar los componentes según su categoría y sumar los precios
+      ensamble.Ensamble_Componente.forEach(({ Componente }) => {
+        if (ordenCategorias.includes(Componente.categoria)) {
+          componentesOrdenados[Componente.categoria] = Componente.nombre;
+        }
+        costoTotal += Componente.precio; // Sumar el precio del componente
+      });
+
+      return {
+        nombre_ensamble: ensamble.nombre,
+        costo_total: costoTotal.toFixed(2), // Redondear a dos decimales
+        componentes: componentesOrdenados,
+      };
+    });
+
+    return res.status(200).json({ ensambles: ensamblesOrganizados });
+  } catch (error) {
+    console.error("Error al obtener ensambles:", error.message);
+    return res.status(500).json({ error: "Error interno del servidor" });
+  } finally {
+    await prisma.$disconnect();
+  }
+}
