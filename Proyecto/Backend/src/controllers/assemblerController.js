@@ -413,7 +413,10 @@ export const getDisksCompatibles = async (req, res) => {
         nombre: true,
         marca: true,
         precio: true,
+        averageRating: true,
+        imagenUrl: true,
         especificaciones: true,
+
       },
     });
 
@@ -508,6 +511,8 @@ export const getCompatiblePSUs = async (req, res) => {
           nombre: true,
           marca: true,
           precio: true,
+          averageRating: true,
+          imagenUrl: true,
           especificaciones: true,
         },
       }),
@@ -563,7 +568,7 @@ export const getCompatiblePSUs = async (req, res) => {
         parseInt(psu.especificaciones?.["PCIe 8-Pin Connectors"]) || 0;
       const pcie6plus2Pin =
         parseInt(psu.especificaciones?.["PCIe 6+2-Pin Connectors"]) || 0;
-
+      
       return (
         psuWattage >= requiredPower &&
         epsConnectors >= requiredEPS &&
@@ -609,6 +614,8 @@ export const getCompatibleCases = async (req, res) => {
           nombre: true,
           marca: true,
           precio: true,
+          averageRating: true,
+          imagenUrl: true,
           especificaciones: true,
         },
       }),
