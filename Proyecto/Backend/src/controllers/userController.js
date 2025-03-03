@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+
 import { createUser, authenticateUser } from '../services/userService.js';
 
 // Función para manejar la creación de usuarios
@@ -24,15 +24,19 @@ export async function createUserHandler(req, res) {
 export async function authenticateUserHandler(req, res) {
   const { correo, contrasena } = req.body;
 
-  // Verificar que ambos campos están presentes
   if (!correo || !contrasena) {
     return res.status(400).json({ error: 'Campos requeridos faltantes' });
   }
 
   try {
-    const user = await authenticateUser(correo, contrasena);
-    if (user) {
-      res.status(200).json(user);
+    const authResult = await authenticateUser(correo, contrasena);
+    
+    if (authResult) {
+      // Devolver usuario y token en la respuesta
+      res.status(200).json({
+        message: 'Authentication successful',
+        token: authResult.token
+      });
     } else {
       res.status(401).json({ error: 'Authentication failed' });
     }

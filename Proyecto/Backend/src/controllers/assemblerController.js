@@ -126,6 +126,8 @@ export const getCPUsCompatibles = async (req, res) => {
         id_componente: true,
         nombre: true,
         marca: true,
+        averageRating: true,
+        imagenUrl: true,
         precio: true,
         especificaciones: true, // Incluye detalles como núcleos, frecuencia, TDP, etc.
       },
@@ -233,6 +235,8 @@ export const getGPUsCompatibles = async (req, res) => {
         nombre: true,
         marca: true,
         precio: true,
+        averageRating: true,
+        imagenUrl: true,
         especificaciones: true, // Incluye detalles como memoria, frecuencias, TDP, etc.
       },
     });
@@ -312,7 +316,10 @@ export const getMemoryCompatibles = async (req, res) => {
         nombre: true,
         marca: true,
         precio: true,
-        especificaciones: true, // Incluye detalles como velocidad, capacidad, tipo de memoria, etc.
+        averageRating: true,
+        imagenUrl: true,
+        especificaciones: true,
+         // Incluye detalles como velocidad, capacidad, tipo de memoria, etc.
       },
     });
 
@@ -406,7 +413,10 @@ export const getDisksCompatibles = async (req, res) => {
         nombre: true,
         marca: true,
         precio: true,
+        averageRating: true,
+        imagenUrl: true,
         especificaciones: true,
+
       },
     });
 
@@ -501,6 +511,8 @@ export const getCompatiblePSUs = async (req, res) => {
           nombre: true,
           marca: true,
           precio: true,
+          averageRating: true,
+          imagenUrl: true,
           especificaciones: true,
         },
       }),
@@ -556,7 +568,7 @@ export const getCompatiblePSUs = async (req, res) => {
         parseInt(psu.especificaciones?.["PCIe 8-Pin Connectors"]) || 0;
       const pcie6plus2Pin =
         parseInt(psu.especificaciones?.["PCIe 6+2-Pin Connectors"]) || 0;
-
+      
       return (
         psuWattage >= requiredPower &&
         epsConnectors >= requiredEPS &&
@@ -602,6 +614,8 @@ export const getCompatibleCases = async (req, res) => {
           nombre: true,
           marca: true,
           precio: true,
+          averageRating: true,
+          imagenUrl: true,
           especificaciones: true,
         },
       }),

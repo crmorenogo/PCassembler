@@ -6,7 +6,7 @@ import path from 'path';
 const prisma = new PrismaClient();
 
 // Obtener la ruta del archivo JSON de manera relativa
-const jsonPath = path.join(process.cwd(), 'data', 'RAM.json');
+const jsonPath = path.join(process.cwd(), 'data', 'RAM_Update.json');
 const jsonData = JSON.parse(fs.readFileSync(jsonPath, 'utf-8'));
 
 // Ruta de la imagen por defecto
