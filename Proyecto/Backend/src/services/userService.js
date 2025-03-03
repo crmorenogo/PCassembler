@@ -16,6 +16,8 @@ export async function createUser(nombre, correo, contrasena, rol = 'usuario') {
   try {
     // Encriptar la contraseña
     const hashedPassword = await bcrypt.hash(contrasena, SALT_ROUNDS);
+
+    // Crear el usuario en la base de datos
     const newUser = await prisma.usuario.create({
       data: {
         nombre,
@@ -24,8 +26,23 @@ export async function createUser(nombre, correo, contrasena, rol = 'usuario') {
         rol,
       },
     });
-    console.log('User created successfully:', newUser);
-    return newUser;
+
+    // Generar Token JWT
+    const token = jwt.sign(
+      { id_usuario: newUser.id_usuario, correo: newUser.correo, rol: newUser.rol },
+      JWT_SECRET,
+      { expiresIn: '7d' }
+    );
+
+
+    // Devolver el usuario junto con el token
+    return {
+      id_usuario: newUser.id_usuario,
+      nombre: newUser.nombre,
+      correo: newUser.correo,
+      rol: newUser.rol,
+      token, // Se añade el token aquí
+    };
   } catch (error) {
     console.error('Error creating user:', error.message);
     throw error;
@@ -62,7 +79,6 @@ export async function authenticateUser(correo, contrasena) {
         { expiresIn: '2h' } // El token expira en 2 horas
       );
 
-      console.log('Authentication successful:', user);
 
       // Retornar el usuario junto con el token
       return { user, token };
@@ -77,6 +93,7 @@ export async function authenticateUser(correo, contrasena) {
     await prisma.$disconnect();
   }
 }
+
 
 // Configurar el transporte de correo
 const transporter = nodemailer.createTransport({
