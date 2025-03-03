@@ -13,10 +13,11 @@ const port = process.env.PORT || 3001;
 app.use(bodyParser.json());
 
 app.use(cors({
-  origin: 'http://localhost:3000', // Permitir solo el frontend
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Métodos HTTP permitidos
-  allowedHeaders: ['Content-Type', 'Authorization'] // Encabezados permitidos
+  origin: 'http://localhost:3000', // Cambiar al puerto correcto del frontend
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
 
 
 app.get('/api/test', (req, res) => {
