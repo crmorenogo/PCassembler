@@ -4,5 +4,5 @@ import { registrarEnsamble } from "../controllers/assemblerController.js"; // As
 const router = Router();
     
 router.post("/registrar-ensamble", registrarEnsamble);
-
+//Ver historial de compra
 export default router;

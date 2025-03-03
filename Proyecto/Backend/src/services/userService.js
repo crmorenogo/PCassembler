@@ -73,10 +73,11 @@ export async function authenticateUser(correo, contrasena) {
     if (isMatch) {
       // Generar el token JWT con el ID y rol del usuario
       const token = jwt.sign(
-        { id: user.id, correo: user.correo, rol: user.rol },
+        { id_usuario: user.id_usuario, correo: user.correo, rol: user.rol },
         JWT_SECRET,
-        { expiresIn: '2h' } // El token expira en 2 horas
+        { expiresIn: '2h' }
       );
+      
 
 
       // Retornar el usuario junto con el token
