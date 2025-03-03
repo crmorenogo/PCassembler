@@ -76,8 +76,9 @@ export async function authenticateUser(correo, contrasena) {
       const token = jwt.sign(
         { id: user.id,nombre: user.nombre ,correo: user.correo, rol: user.rol },
         JWT_SECRET,
-        { expiresIn: '2h' } // El token expira en 2 horas
+        { expiresIn: '2h' }
       );
+      
 
 
       // Retornar el usuario junto con el token
